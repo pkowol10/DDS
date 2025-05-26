@@ -1,0 +1,15 @@
+wadr = 32
+wdata = 64
+wmem = 2^12
+akumulator fazy[wadr-1:0](krok[wadr-1:0]) -> adres[wadr-1:0]
+pamiec[wmem-1:0][wdata-1:0](adres[wadr-1:wadr-12]) -> data[wdata-1:0]
+
+ser_64_8(data[wdata-1:0]-uwaga na kolejnosc danych!!!)
+
+miedzy ser_64_8 a pamiecia mux_8_1 x64 + reg_64 (8 odpowiadajacych sobie bitow z pamieci do jendego wejscia sera)
+
+sterowanie muxami:
+jesli krok jest maly, to na podstawie jego mlodszych bitow sterowac, a jesli krok jest duzy na tyle, ze
+za kazdym razem jest ladowana kolejna komorka pamieci, to muxy beda przekazywac co druga lub co czwarta probke??? 
+(albo ta czesc olac i po prostu przekazywac ta sama do kilku serow lub po kolei - mozna zalozyc maksymalny krok taki, by
+odczytywac za kazdym razem kolejna probke z pamieci)

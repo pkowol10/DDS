@@ -1,0 +1,184 @@
+\documentclass{beamer}
+\usetheme[parttitle=leftfooter]{AGH}
+\usepackage[utf8]{inputenc}
+\usepackage{polski}
+\usepackage[polish]{babel}
+
+\usepackage{csvsimple}
+\usepackage{tikz}
+\usepackage{pgfplots}
+\usepackage{pgfplotstable}
+
+\usepackage[european, american inductor, american currents]{circuitikz}
+\pgfplotsset{compat=1.18}
+
+\usepackage[natbib=true, backend=biber, style=numeric, sorting=none]{biblatex}
+\addbibresource{../Dokumentacja/references.bib}
+
+\usepackage{subcaption}
+
+\setbeamertemplate{bibliography item}{\insertbiblabel}
+
+% \setbeamertemplate{headline}{
+%     \leavevmode%
+%     \hbox{%
+%         \begin{beamercolorbox}[wd=0.5\paperwidth,ht=2.5ex,dp=1ex, left]{author in head/foot}%
+        
+%         \end{beamercolorbox}%
+%         \begin{beamercolorbox}[wd=0.5\paperwidth,ht=2.5ex,dp=1ex, left]{date in head/foot}%
+        
+%         \end{beamercolorbox}%
+%     }
+% }
+
+\setbeamertemplate{footline}
+{
+    \leavevmode%
+    \hbox{%
+    \begin{beamercolorbox}[wd=.33\paperwidth,ht=2.25ex,dp=1ex,left]{author in head/foot}%
+        \usebeamerfont{author in head/foot}\insertshortauthor
+    \end{beamercolorbox}%
+    \begin{beamercolorbox}[wd=.34\paperwidth,ht=2.25ex,dp=1ex,center]{title in head/foot}%
+        \usebeamerfont{author in head/foot}\insertshortinstitute
+    \end{beamercolorbox}%
+    \begin{beamercolorbox}[wd=.33\paperwidth,ht=2.25ex,dp=1ex,right]{date in head/foot}%
+        \usebeamerfont{date in head/foot}\insertshortdate{}\hspace*{3em}
+        \insertframenumber{} / \inserttotalframenumber\hspace*{1ex}
+    \end{beamercolorbox}
+    }%
+    \vskip0pt%
+}
+
+\renewcommand{\bibfont}{\small}
+
+\setbeamerfont{title}{size={\fontsize{13}{13}}}
+% \fontsize{0.8}{0.8}
+\title{Szybki generator funkcyjny sterujący drabinką R-2R}
+% \fontsize{1}{1}
+\author{Piotr Kowol, Mateusz Kulak, Piotr Łętowski\\ \footnotesize Opiekun projektu:Ernest Jamro}
+\institute{Akademia Górniczo-Hutnicza w Krakowie}
+\date[\today]
+
+\begin{document}
+    \maketitle
+
+    \begin{frame}{Plan Prezentacji}
+        \tableofcontents
+    \end{frame}
+
+    \section{Założenia projektowe}
+    \begin{frame}{Założenia projektowe}
+        \begin{block}{}
+            \begin{itemize}
+                \item Odtwarzanie sygnałów wykorzystując bezpośrednią syntezę cyfrową
+                \item Wykorzystanie dedykowanych serializerów w celu uzyskania wyższej częstotliwości odtwarzania
+                \item Możliwość załadowania próbek sygnału do pamięci
+            \end{itemize}
+        \end{block}
+    \end{frame}
+
+    \section{Schemat blokowy układu}
+    \begin{frame}{Schemat blokowy układu}
+        \begin{figure}
+            \centering
+            \scalebox{0.5}{\input{../Dokumentacja/schematics/blockDiagram.tex}}
+            \caption{Schemat blokowy generatora.}
+            \label{sch:DDS}
+        \end{figure}
+    \end{frame}
+
+    \subsection{Akumulator fazy}
+    \begin{frame}{Akumulator fazy}
+        \begin{block}{}
+            \begin{itemize}
+                \item Składa się z rejestru i sumatora
+                \item Z każdym taktem LS\_CLK zwiększa zawartość rejestru o zadany krok fazowy
+                \item Adresuje pamięć próbek
+            \end{itemize}
+        \end{block}
+    \end{frame}
+
+    \subsection{Pamięć próbek}
+    \begin{frame}{Pamięć próbek}
+        \begin{block}{}
+            \begin{itemize}
+                \item Pamięć dwu-portowa - jeden port tylko do zapisu, a drugi tylko do odczytu
+                \item Przechowuje wartości generowanego przebiegu
+                \item Przekazuje próbki do serializera z każdym taktem LS\_CLK
+                \item Zrealizowana w postaci pamięci BRAM
+            \end{itemize}
+        \end{block}
+    \end{frame}
+
+    \subsection{Serializer}
+    \begin{frame}{Serializer}
+        \begin{block}{}
+            \begin{itemize}
+                \item Wykorzystuje 8 dedykowanych układów OSERDESE2 w konfiguracji serializerów 8 do 1
+                \item Przekazuje próbki do przetwornika C/A przy każdym zboczu HS\_CLK (DDR)
+            \end{itemize}
+        \end{block}
+    \end{frame}
+
+    \subsection{PRzetwornik C/A}
+    \begin{frame}{przetwornik C/A}
+        \begin{block}{}
+            \begin{itemize}
+                \item Drabinka R-2R na zewnątrz układu FPGA
+                \item Zamienia próbki na schodkowy sygnał analogowy
+            \end{itemize}
+        \end{block}
+    \end{frame}
+    
+    \subsection{Filtr dolnoprzepustowy}
+    \begin{frame}{Filtr dolnoprzepustowy}
+        \begin{block}{}
+            \begin{itemize}
+                \item Usuwa składowe wysokoczęstotliwościowe z generowanego sygnału
+                \item Pozwala uzyskać przebieg analogowy z sygnału schodkowego
+            \end{itemize}
+        \end{block}
+    \end{frame}
+
+    \subsection{Mikroprocesor}
+    \begin{frame}{Mikroprocesor}
+        \begin{block}{}
+            \begin{itemize}
+                \item Konfiguruje pracę poszczególnych bloków
+                \item Odbiera wartości próbek i dane konfiguracyjne z komputera za pośrednictwem protokołu UART
+                \item Przekazuje próbki do pamięci
+                \item Zrealizowany w postaci procesora ZYNQ w układzie FPGA
+                \item Realizaja UARTu poprzez program napisany w C
+            \end{itemize}
+        \end{block}
+    \end{frame}
+
+    \subsection{Generacja zegara}
+    \begin{frame}{Generacja zegara}
+        \begin{block}{}
+            \begin{itemize}
+                \item Szybki zegar HS\_CLK do taktowania układów OSERDESE2 o częstotliwości 500 MHz (1 Gb/s)
+                \item Wolny zegar LS\_CLK do taktowania pozostałej logiki oraz procesora ZYNQ o częstotliwości $\frac{1}{4} f_{HS\_CLK} = 125\ MHz$
+                \item Wykorzystuje dedykowane bufory z programowalnym dzielnikiem częstotliwości BUFR do generowania LS\_CLK
+            \end{itemize}
+        \end{block}
+    \end{frame}
+
+    \begin{frame}
+        \vspace*{2cm}
+        \centering
+        {\Huge Dziękujemy za uwagę.}
+        \vspace*{\fill}
+        \begin{flushright}
+            Piotr Kowol, \\
+            Mateusz Kulak, \\
+            Piotr Łętowski
+        \end{flushright}
+    \end{frame}
+
+    \begin{frame}[t, allowframebreaks]{Bibliografia}
+        \nocite{*}
+        \printbibliography
+    \end{frame}
+
+\end{document}

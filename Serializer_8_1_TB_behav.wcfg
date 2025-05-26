@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wave_config>
+   <wave_state>
+   </wave_state>
+   <db_ref_list>
+      <db_ref path="Serializer_8_1_primitive_TB_behav.wdb" id="1">
+         <top_modules>
+            <top_module name="Serializer_8_1_primitive_TB" />
+            <top_module name="glbl" />
+         </top_modules>
+      </db_ref>
+   </db_ref_list>
+   <zoom_setting>
+      <ZoomStartTime time="0fs"></ZoomStartTime>
+      <ZoomEndTime time="182599639fs"></ZoomEndTime>
+      <Cursor1Time time="846007000fs"></Cursor1Time>
+   </zoom_setting>
+   <column_width_setting>
+      <NameColumnWidth column_width="150"></NameColumnWidth>
+      <ValueColumnWidth column_width="72"></ValueColumnWidth>
+   </column_width_setting>
+   <WVObjectSize size="6" />
+   <wvobject fp_name="/Serializer_8_1_primitive_TB/CLK" type="logic">
+      <obj_property name="ElementShortName">CLK</obj_property>
+      <obj_property name="ObjectShortName">CLK</obj_property>
+   </wvobject>
+   <wvobject fp_name="/Serializer_8_1_primitive_TB/CLKDIV" type="logic">
+      <obj_property name="ElementShortName">CLKDIV</obj_property>
+      <obj_property name="ObjectShortName">CLKDIV</obj_property>
+   </wvobject>
+   <wvobject fp_name="/Serializer_8_1_primitive_TB/RESET" type="logic">
+      <obj_property name="ElementShortName">RESET</obj_property>
+      <obj_property name="ObjectShortName">RESET</obj_property>
+   </wvobject>
+   <wvobject fp_name="/Serializer_8_1_primitive_TB/Load" type="logic">
+      <obj_property name="ElementShortName">Load</obj_property>
+      <obj_property name="ObjectShortName">Load</obj_property>
+   </wvobject>
+   <wvobject fp_name="/Serializer_8_1_primitive_TB/Din" type="array">
+      <obj_property name="ElementShortName">Din[7:0]</obj_property>
+      <obj_property name="ObjectShortName">Din[7:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/Serializer_8_1_primitive_TB/Dout" type="logic">
+      <obj_property name="ElementShortName">Dout</obj_property>
+      <obj_property name="ObjectShortName">Dout</obj_property>
+   </wvobject>
+</wave_config>
