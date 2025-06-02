@@ -34,18 +34,19 @@ module Skip_adder #(parameter W = 8)(
 
     genvar i;
     generate
-        for (i = 0; i < W; i = i + 1) begin : adder_stage
+        for (i = 0; i < W; i = i + 1) 
+        begin
             assign T[i] = A[i] ^ B[i];
-            assign C[i+1] = C[i] ? A[i] ^ B[i]: A[i];
+            assign C[i+1] = (A[i] ^ B[i]) ? C[i] : A[i];
             assign Sum[i] = A[i] ^ B[i] ^ C[i];
-//            assign t_out = C[0] & T[0] ? (i <= 1): t_out & T[i];
-//            assign t_out = t_out & T[i];
+
         end
     endgenerate
 
-    assign t_out = Cin & T;
-    assign Cout = C[W] | t_out;
-
+    assign t_out =  & T;
+    assign Cout = t_out ? C[0] : C[W];
 
 // ZA WOLNO DZIALA, WRZUCIC np N*4-bity xdddd
+
+// zrobic 4x8 bit -> 32bit
 endmodule

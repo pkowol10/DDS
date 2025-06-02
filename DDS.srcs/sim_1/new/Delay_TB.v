@@ -3,9 +3,9 @@
 // Company: 
 // Engineer: 
 // 
-// Create Date: 03.05.2025 00:48:32
+// Create Date: 31.05.2025 01:04:44
 // Design Name: 
-// Module Name: Phase_acumulator_TB
+// Module Name: Delay_TB
 // Project Name: 
 // Target Devices: 
 // Tool Versions: 
@@ -20,53 +20,40 @@
 //////////////////////////////////////////////////////////////////////////////////
 
 
-module Phase_acumulator_TB();
-    
-    parameter w_step = 8;
-    parameter w_out = 16;
-    parameter N = 2;
-    
-    time T_CLK = 10;
+module Delay_TB();
+
+    parameter delay = 3;
     
     reg CLK;
     reg CE;
-    reg RESET;
-    reg [w_step-1:0] step;
-    reg [w_out-1:0] mod;
-    wire [w_out-1:0] out1;
-    wire [w_out-1:0] out2;
-    wire [w_out-1:0] out3;
+    reg Delin;
+    wire DelCE;
     
+    time T_CLK = 8;
     
-    Phase_acumulator #(1, w_step, w_out, N) PA_v1(CLK, CE, RESET, step, out1);
-    Phase_acumulator #(2, w_step, w_out, N) PA_v2(CLK, CE, RESET, step, out2);
-    Phase_counter #(w_out) PC(CLK, CE, RESET, mod, out3);
+//    Delay #(delay) DUT (CLK, CE, Delin, DelCE);
+    Delay3_test DUT(CLK, CE, Delin, DelCE);
     
     initial begin
         CLK <= 0;
         #(0.5*T_CLK);
-        forever
-        begin
+        forever begin
             CLK <= ~CLK;
             #(0.5*T_CLK);
         end
     end
     
     initial begin
-        RESET <= 0;
         CE <= 0;
-        mod <= 5;
+        Delin <= 0;
         #(2*T_CLK);
-        RESET <= 1;
         CE <= 1;
-        step <= 5;
         #(2*T_CLK);
-        RESET <= 0;
+        Delin <= 1;
         #(20*T_CLK);
-        mod <= 16;
-        #(20*T_CLK);
+        Delin <= 0;
+        #(10*T_CLK);
         $finish;
     end
     
-
 endmodule

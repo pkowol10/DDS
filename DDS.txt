@@ -13,3 +13,26 @@ jesli krok jest maly, to na podstawie jego mlodszych bitow sterowac, a jesli kro
 za kazdym razem jest ladowana kolejna komorka pamieci, to muxy beda przekazywac co druga lub co czwarta probke??? 
 (albo ta czesc olac i po prostu przekazywac ta sama do kilku serow lub po kolei - mozna zalozyc maksymalny krok taki, by
 odczytywac za kazdym razem kolejna probke z pamieci)
+
+
+
+BUFR(2) -> 0.264 ns opoznienia
+BUFR(1) -> nie dziala
+BUFR(BYPASS) -> 0.769 ns opoznienia
+
+
+
+PA_comp:
+step	f
+200	762.744
+120	443.262
+110	405.844
+100	369.822
+
+dla sumatora dane nie sa powiazane z krokiem fazowym
+
+
+mod	f
+250	932.835
+240	932.835
+200	1506.024

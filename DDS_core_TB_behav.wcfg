@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wave_config>
+   <wave_state>
+   </wave_state>
+   <db_ref_list>
+      <db_ref path="DDS_core_TB_behav.wdb" id="1">
+         <top_modules>
+            <top_module name="DDS_core_TB" />
+            <top_module name="glbl" />
+         </top_modules>
+      </db_ref>
+   </db_ref_list>
+   <zoom_setting>
+      <ZoomStartTime time="5455700000fs"></ZoomStartTime>
+      <ZoomEndTime time="5597100001fs"></ZoomEndTime>
+      <Cursor1Time time="5500000000fs"></Cursor1Time>
+   </zoom_setting>
+   <column_width_setting>
+      <NameColumnWidth column_width="130"></NameColumnWidth>
+      <ValueColumnWidth column_width="72"></ValueColumnWidth>
+   </column_width_setting>
+   <WVObjectSize size="19" />
+   <wvobject fp_name="/DDS_core_TB/ref_CLK" type="logic">
+      <obj_property name="ElementShortName">ref_CLK</obj_property>
+      <obj_property name="ObjectShortName">ref_CLK</obj_property>
+   </wvobject>
+   <wvobject fp_name="/DDS_core_TB/CE" type="logic">
+      <obj_property name="ElementShortName">CE</obj_property>
+      <obj_property name="ObjectShortName">CE</obj_property>
+   </wvobject>
+   <wvobject fp_name="/DDS_core_TB/RESET" type="logic">
+      <obj_property name="ElementShortName">RESET</obj_property>
+      <obj_property name="ObjectShortName">RESET</obj_property>
+   </wvobject>
+   <wvobject fp_name="/DDS_core_TB/step" type="array">
+      <obj_property name="ElementShortName">step[7:0]</obj_property>
+      <obj_property name="ObjectShortName">step[7:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/DDS_core_TB/data_in" type="array">
+      <obj_property name="ElementShortName">data_in[63:0]</obj_property>
+      <obj_property name="ObjectShortName">data_in[63:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/DDS_core_TB/WE" type="logic">
+      <obj_property name="ElementShortName">WE</obj_property>
+      <obj_property name="ObjectShortName">WE</obj_property>
+   </wvobject>
+   <wvobject fp_name="/DDS_core_TB/sample" type="array">
+      <obj_property name="ElementShortName">sample[7:0]</obj_property>
+      <obj_property name="ObjectShortName">sample[7:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/DDS_core_TB/LS_CLK" type="logic">
+      <obj_property name="ElementShortName">LS_CLK</obj_property>
+      <obj_property name="ObjectShortName">LS_CLK</obj_property>
+   </wvobject>
+   <wvobject fp_name="/DDS_core_TB/DUT/HS_CLK" type="logic">
+      <obj_property name="ElementShortName">HS_CLK</obj_property>
+      <obj_property name="ObjectShortName">HS_CLK</obj_property>
+   </wvobject>
+   <wvobject fp_name="/DDS_core_TB/DUT/lock" type="logic">
+      <obj_property name="ElementShortName">lock</obj_property>
+      <obj_property name="ObjectShortName">lock</obj_property>
+   </wvobject>
+   <wvobject fp_name="/DDS_core_TB/dataEN" type="logic">
+      <obj_property name="ElementShortName">dataEN</obj_property>
+      <obj_property name="ObjectShortName">dataEN</obj_property>
+   </wvobject>
+   <wvobject fp_name="/DDS_core_TB/data_buf" type="array">
+      <obj_property name="ElementShortName">data_buf[63:0]</obj_property>
+      <obj_property name="ObjectShortName">data_buf[63:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/DDS_core_TB/T_CLK" type="array">
+      <obj_property name="ElementShortName">T_CLK[63:0]</obj_property>
+      <obj_property name="ObjectShortName">T_CLK[63:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/DDS_core_TB/w_step" type="array">
+      <obj_property name="ElementShortName">w_step[31:0]</obj_property>
+      <obj_property name="ObjectShortName">w_step[31:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/DDS_core_TB/w_PA" type="array">
+      <obj_property name="ElementShortName">w_PA[31:0]</obj_property>
+      <obj_property name="ObjectShortName">w_PA[31:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/DDS_core_TB/w_addr" type="array">
+      <obj_property name="ElementShortName">w_addr[31:0]</obj_property>
+      <obj_property name="ObjectShortName">w_addr[31:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/DDS_core_TB/w_data" type="array">
+      <obj_property name="ElementShortName">w_data[31:0]</obj_property>
+      <obj_property name="ObjectShortName">w_data[31:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/DDS_core_TB/w_sample" type="array">
+      <obj_property name="ElementShortName">w_sample[31:0]</obj_property>
+      <obj_property name="ObjectShortName">w_sample[31:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/DDS_core_TB/N" type="array">
+      <obj_property name="ElementShortName">N[31:0]</obj_property>
+      <obj_property name="ObjectShortName">N[31:0]</obj_property>
+   </wvobject>
+</wave_config>

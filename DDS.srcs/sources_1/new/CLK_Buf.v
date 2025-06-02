@@ -33,7 +33,7 @@ module CLK_Buf(
     
     BUFR #(
 //       .BUFR_DIVIDE("BYPASS"),   // Values: "BYPASS, 1, 2, 3, 4, 5, 6, 7, 8"
-       .BUFR_DIVIDE("2"),
+       .BUFR_DIVIDE("BYPASS"),
        .SIM_DEVICE("7SERIES")  // Must be set to "7SERIES"
     )
     BUFR_inst (

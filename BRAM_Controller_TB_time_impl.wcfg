@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wave_config>
+   <wave_state>
+   </wave_state>
+   <db_ref_list>
+      <db_ref path="BRAM_Controller_TB_time_impl.wdb" id="1">
+         <top_modules>
+            <top_module name="BRAM_Controller_TB" />
+            <top_module name="glbl" />
+         </top_modules>
+      </db_ref>
+   </db_ref_list>
+   <zoom_setting>
+      <ZoomStartTime time="2196579482fs"></ZoomStartTime>
+      <ZoomEndTime time="2217484104fs"></ZoomEndTime>
+      <Cursor1Time time="2204555000fs"></Cursor1Time>
+   </zoom_setting>
+   <column_width_setting>
+      <NameColumnWidth column_width="199"></NameColumnWidth>
+      <ValueColumnWidth column_width="181"></ValueColumnWidth>
+   </column_width_setting>
+   <WVObjectSize size="20" />
+   <wave_markers>
+      <marker time="2199289000" label="" />
+   </wave_markers>
+   <wvobject fp_name="/BRAM_Controller_TB/CLKA" type="logic">
+      <obj_property name="ElementShortName">CLKA</obj_property>
+      <obj_property name="ObjectShortName">CLKA</obj_property>
+   </wvobject>
+   <wvobject fp_name="/BRAM_Controller_TB/CEA" type="logic">
+      <obj_property name="ElementShortName">CEA</obj_property>
+      <obj_property name="ObjectShortName">CEA</obj_property>
+   </wvobject>
+   <wvobject fp_name="/BRAM_Controller_TB/WE" type="logic">
+      <obj_property name="ElementShortName">WE</obj_property>
+      <obj_property name="ObjectShortName">WE</obj_property>
+   </wvobject>
+   <wvobject fp_name="/BRAM_Controller_TB/addrA" type="array">
+      <obj_property name="ElementShortName">addrA[7:0]</obj_property>
+      <obj_property name="ObjectShortName">addrA[7:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/BRAM_Controller_TB/DinA" type="array">
+      <obj_property name="ElementShortName">DinA[63:0]</obj_property>
+      <obj_property name="ObjectShortName">DinA[63:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/BRAM_Controller_TB/CLKB" type="logic">
+      <obj_property name="ElementShortName">CLKB</obj_property>
+      <obj_property name="ObjectShortName">CLKB</obj_property>
+   </wvobject>
+   <wvobject fp_name="/BRAM_Controller_TB/CEB" type="logic">
+      <obj_property name="ElementShortName">CEB</obj_property>
+      <obj_property name="ObjectShortName">CEB</obj_property>
+   </wvobject>
+   <wvobject fp_name="/BRAM_Controller_TB/addrB" type="array">
+      <obj_property name="ElementShortName">addrB[7:0]</obj_property>
+      <obj_property name="ObjectShortName">addrB[7:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/BRAM_Controller_TB/DoutB" type="array">
+      <obj_property name="ElementShortName">DoutB[63:0]</obj_property>
+      <obj_property name="ObjectShortName">DoutB[63:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/BRAM_Controller_TB/data_buf" type="array">
+      <obj_property name="ElementShortName">data_buf[63:0]</obj_property>
+      <obj_property name="ObjectShortName">data_buf[63:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/BRAM_Controller_TB/dataEN" type="logic">
+      <obj_property name="ElementShortName">dataEN</obj_property>
+      <obj_property name="ObjectShortName">dataEN</obj_property>
+   </wvobject>
+   <wvobject fp_name="/BRAM_Controller_TB/RE" type="logic">
+      <obj_property name="ElementShortName">RE</obj_property>
+      <obj_property name="ObjectShortName">RE</obj_property>
+   </wvobject>
+   <wvobject fp_name="/BRAM_Controller_TB/T_CLK" type="array">
+      <obj_property name="ElementShortName">T_CLK[63:0]</obj_property>
+      <obj_property name="ObjectShortName">T_CLK[63:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/BRAM_Controller_TB/waddr" type="array">
+      <obj_property name="ElementShortName">waddr[31:0]</obj_property>
+      <obj_property name="ObjectShortName">waddr[31:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/BRAM_Controller_TB/wdata" type="array">
+      <obj_property name="ElementShortName">wdata[31:0]</obj_property>
+      <obj_property name="ObjectShortName">wdata[31:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/BRAM_Controller_TB/DUT/DinA_IBUF" type="array">
+      <obj_property name="ElementShortName">DinA_IBUF[63:0]</obj_property>
+      <obj_property name="ObjectShortName">DinA_IBUF[63:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/BRAM_Controller_TB/DUT/addrA_IBUF" type="array">
+      <obj_property name="ElementShortName">addrA_IBUF[7:0]</obj_property>
+      <obj_property name="ObjectShortName">addrA_IBUF[7:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/BRAM_Controller_TB/DUT/addrB_IBUF" type="array">
+      <obj_property name="ElementShortName">addrB_IBUF[7:0]</obj_property>
+      <obj_property name="ObjectShortName">addrB_IBUF[7:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/BRAM_Controller_TB/DUT/CLK_IBUF" type="logic">
+      <obj_property name="ElementShortName">CLK_IBUF</obj_property>
+      <obj_property name="ObjectShortName">CLK_IBUF</obj_property>
+   </wvobject>
+   <wvobject fp_name="/BRAM_Controller_TB/DUT/CLK_IBUF_BUFG" type="logic">
+      <obj_property name="ElementShortName">CLK_IBUF_BUFG</obj_property>
+      <obj_property name="ObjectShortName">CLK_IBUF_BUFG</obj_property>
+   </wvobject>
+</wave_config>

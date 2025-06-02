@@ -3,9 +3,9 @@
 // Company: 
 // Engineer: 
 // 
-// Create Date: 25.05.2025 01:46:32
+// Create Date: 31.05.2025 01:32:13
 // Design Name: 
-// Module Name: DDS_top_TB
+// Module Name: Delay_test
 // Project Name: 
 // Target Devices: 
 // Tool Versions: 
@@ -20,7 +20,13 @@
 //////////////////////////////////////////////////////////////////////////////////
 
 
-module DDS_top_TB(
+module Delay3_test(CLK, CE, Delin, DelCE);
 
-    );
+    input CLK;
+    input CE;
+    input Delin;
+    output DelCE;
+    
+    Delay #(3) del (CLK, CE, Delin, DelCE);
+    
 endmodule

@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wave_config>
+   <wave_state>
+   </wave_state>
+   <db_ref_list>
+      <db_ref path="PA_comparison_TB_behav.wdb" id="1">
+         <top_modules>
+            <top_module name="PA_comparison_TB" />
+            <top_module name="glbl" />
+         </top_modules>
+      </db_ref>
+   </db_ref_list>
+   <zoom_setting>
+      <ZoomStartTime time="36600000fs"></ZoomStartTime>
+      <ZoomEndTime time="177000001fs"></ZoomEndTime>
+      <Cursor1Time time="60000000fs"></Cursor1Time>
+   </zoom_setting>
+   <column_width_setting>
+      <NameColumnWidth column_width="135"></NameColumnWidth>
+      <ValueColumnWidth column_width="72"></ValueColumnWidth>
+   </column_width_setting>
+   <WVObjectSize size="21" />
+   <wave_markers>
+      <marker time="20000000" label="" />
+   </wave_markers>
+   <wvobject fp_name="/PA_comparison_TB/T_CLK" type="array">
+      <obj_property name="ElementShortName">T_CLK[63:0]</obj_property>
+      <obj_property name="ObjectShortName">T_CLK[63:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/PA_comparison_TB/CLK" type="logic">
+      <obj_property name="ElementShortName">CLK</obj_property>
+      <obj_property name="ObjectShortName">CLK</obj_property>
+   </wvobject>
+   <wvobject fp_name="/PA_comparison_TB/CE" type="logic">
+      <obj_property name="ElementShortName">CE</obj_property>
+      <obj_property name="ObjectShortName">CE</obj_property>
+   </wvobject>
+   <wvobject fp_name="/PA_comparison_TB/RESET" type="logic">
+      <obj_property name="ElementShortName">RESET</obj_property>
+      <obj_property name="ObjectShortName">RESET</obj_property>
+   </wvobject>
+   <wvobject fp_name="/PA_comparison_TB/step" type="array">
+      <obj_property name="ElementShortName">step[7:0]</obj_property>
+      <obj_property name="ObjectShortName">step[7:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/PA_comparison_TB/mod" type="array">
+      <obj_property name="ElementShortName">mod[15:0]</obj_property>
+      <obj_property name="ObjectShortName">mod[15:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/PA_comparison_TB/out1" type="array">
+      <obj_property name="ElementShortName">out1[15:0]</obj_property>
+      <obj_property name="ObjectShortName">out1[15:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/PA_comparison_TB/out2" type="array">
+      <obj_property name="ElementShortName">out2[15:0]</obj_property>
+      <obj_property name="ObjectShortName">out2[15:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/PA_comparison_TB/out3" type="array">
+      <obj_property name="ElementShortName">out3[15:0]</obj_property>
+      <obj_property name="ObjectShortName">out3[15:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/PA_comparison_TB/data1" type="array">
+      <obj_property name="ElementShortName">data1[7:0]</obj_property>
+      <obj_property name="ObjectShortName">data1[7:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/PA_comparison_TB/data2" type="array">
+      <obj_property name="ElementShortName">data2[7:0]</obj_property>
+      <obj_property name="ObjectShortName">data2[7:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/PA_comparison_TB/data3" type="array">
+      <obj_property name="ElementShortName">data3[7:0]</obj_property>
+      <obj_property name="ObjectShortName">data3[7:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/PA_comparison_TB/rom" type="array">
+      <obj_property name="ElementShortName">rom[255:0][7:0]</obj_property>
+      <obj_property name="ObjectShortName">rom[255:0][7:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/PA_comparison_TB/i" type="array">
+      <obj_property name="ElementShortName">i[31:0]</obj_property>
+      <obj_property name="ObjectShortName">i[31:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/PA_comparison_TB/sin_i" type="array">
+      <obj_property name="ElementShortName">sin_i[31:0]</obj_property>
+      <obj_property name="ObjectShortName">sin_i[31:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/PA_comparison_TB/w_step" type="array">
+      <obj_property name="ElementShortName">w_step[31:0]</obj_property>
+      <obj_property name="ObjectShortName">w_step[31:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/PA_comparison_TB/w_out" type="array">
+      <obj_property name="ElementShortName">w_out[31:0]</obj_property>
+      <obj_property name="ObjectShortName">w_out[31:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/PA_comparison_TB/N" type="array">
+      <obj_property name="ElementShortName">N[31:0]</obj_property>
+      <obj_property name="ObjectShortName">N[31:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/PA_comparison_TB/Pi" type="other">
+      <obj_property name="ElementShortName">Pi</obj_property>
+      <obj_property name="ObjectShortName">Pi</obj_property>
+   </wvobject>
+   <wvobject fp_name="/PA_comparison_TB/T1" type="logic">
+      <obj_property name="ElementShortName">T1</obj_property>
+      <obj_property name="ObjectShortName">T1</obj_property>
+   </wvobject>
+   <wvobject fp_name="/PA_comparison_TB/T3" type="logic">
+      <obj_property name="ElementShortName">T3</obj_property>
+      <obj_property name="ObjectShortName">T3</obj_property>
+   </wvobject>
+</wave_config>

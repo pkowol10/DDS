@@ -25,14 +25,14 @@ module Serializer_8_1_primitive_v2_TB();
     reg CLKDIV;
     reg CE;
     reg RESET;
-    reg Load;
+//    reg Load;
     reg [7:0] Din;
     wire Dout;
     
     reg prbsEn;
     time T_CLK = 2;
 //    Serializer_8_1 DUT(CLK, CE, RESET, Load, Din, Dout);
-    Serializer_8_1_primitive_v2 DUT(CLK, CLKDIV, CE, RESET, Load, Din, Dout);
+    Serializer_8_1_primitive_v2 DUT(CLK, CLKDIV, CE, RESET, Din, Dout);
     
     // generator PRBS: https://github.com/mgwang37/PRBS/blob/master/Verilog/prbs_generator.v
     function [15:0] prbs16;
@@ -60,6 +60,7 @@ module Serializer_8_1_primitive_v2_TB();
     
     
 initial begin
+    #(46*T_CLK);
     CLK <= 0;
     CLKDIV <= 0;
 //    #(0.5*T_CLK);
@@ -74,8 +75,9 @@ initial begin
 end
 
 initial begin
+    #(46*T_CLK);
     CLKDIV <= 0;
-//    #(2*T_CLK);
+//    #(0.25*T_CLK);
     forever
     begin
         #(2*T_CLK);
@@ -85,7 +87,7 @@ end
 
 
 reg [1:0] prbsTrig = 0;
-reg [15:0] prbs = 4'hfffe;
+reg [15:0] prbs = 'hfffe;
 always @(posedge CLKDIV)
 begin
 //    prbsTrig <= prbsTrig + 1;
@@ -96,7 +98,7 @@ begin
         #(0.5*T_CLK);
         prbs <= prbs16(prbs);
         Din <= prbs[11:4];
-        Load <= 1'b1;
+//        Load <= 1'b1;
     end
 //    end
 //    if (prbsTrig == 2'b00)      //beh sim
@@ -105,18 +107,18 @@ begin
 end
 
 initial begin
-prbsEn <= 1'b0;
-Load <= 1'b0;
-#100;
-prbsEn <= 1'b1;
-Load <= 1'b1;
+    prbsEn <= 1'b0;
+//    Load <= 1'b0;
+    #100;
+    prbsEn <= 1'b1;
+//    Load <= 1'b1;
 end
 
 initial begin
     CE <= 1'b0;
     RESET <= 1'b0;
     Din <= 8'b00000000;
-    #(2*T_CLK);
+    #(50*T_CLK);
     CE <= 1'b1;
     RESET <= 1'b1;
 //    Din <= 8'b00110101;
@@ -137,4 +139,7 @@ initial begin
 ////    Din <= 8'b00000000;
 //    #(2*T_CLK);
 end
+
+    // 1 takt LS_CLK od CE (RESET) do rozpoczecia dzialania, ale uklad potrzebuje 100 ns na rozruch
+    // conajmniej 1 takt zegara przed CE (RESET) 
 endmodule

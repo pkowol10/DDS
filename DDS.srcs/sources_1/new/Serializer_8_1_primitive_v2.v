@@ -25,7 +25,6 @@ module Serializer_8_1_primitive_v2(
     input CLKDIVin,
     input CE,
     input RESET,
-    input Load,
     input [7:0] Data,
     output Q
     );
@@ -45,7 +44,7 @@ module Serializer_8_1_primitive_v2(
        .SRVAL_TQ(1'b0),        // TQ output value when SR is used (1'b0,1'b1)
        .TBYTE_CTL("FALSE"),    // Enable tristate byte operation (FALSE, TRUE)
        .TBYTE_SRC("FALSE"),    // Tristate byte source (FALSE, TRUE)
-       .TRISTATE_WIDTH(4)      // 3-state converter width (1,4)
+       .TRISTATE_WIDTH(1)      // 3-state converter width (1,4)
     )
     OSERDESE2_inst (
        .OFB(OFB),             // 1-bit output: Feedback path for data
