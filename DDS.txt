@@ -39,6 +39,7 @@ mod	f
 
 
 
+- rezygnacja z BUFR, bo PLL ma 6 kanalow
 - phase acumulator - adder czy counter - wyniki pomiarów (preferencja: adder, oba uklady wyrabiaja czasowo (16-bit, 24 nie 
 powinny byc problemem - CSA 2x8bit, RCA 16-bit, CNT-16bit))
 - multipleksacja danych pamiec-serdes (liniowosc fazy)
