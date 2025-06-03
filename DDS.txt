@@ -36,3 +36,14 @@ mod	f
 250	932.835
 240	932.835
 200	1506.024
+
+
+
+- phase acumulator - adder czy counter - wyniki pomiarów (preferencja: adder, oba uklady wyrabiaja czasowo (16-bit, 24 nie 
+powinny byc problemem - CSA 2x8bit, RCA 16-bit, CNT-16bit))
+- multipleksacja danych pamiec-serdes (liniowosc fazy)
+- timing report - OSERDESE2 oraz PLL_BASEE2 wyrabiaja, ale BUFG na wysjciu PLLa ma przekroczenie minimalnego okresu o 0.155 ns - 
+czy to ma duze znaczenie (T_min = 2.155 ns, co odpowiada f_max = 464 MHz)? Rozwaizanie: obnizenie czestotliwosci HS_CLK do 
+450 MHz (LS_CLK do 112.5 MHz)
+- power report - estymacja zuzycia mocy oraz temperatury ukladu - na ile pokrywa sie z rzeczywistoscia? (na wszelki wypadek, 
+kryzys energetyczny zazegnany przez konfiguracje zegara w .xdc)
