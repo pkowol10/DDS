@@ -1,0 +1,13 @@
+\section{Wstęp}
+    Generatory funkcyjne pozwalają generować sygnały elektryczne o zadanych parametrach. 
+    Jednym ze sposobów na generowanie sygnału jest bezpośrednia synteza cyfrowa - DDS (\textit{ang.} 
+    Direct Digital Synthesis). Jeden ze sposobów realizacji bezpośredniej syntezy cyfrowej 
+    wykorzystuje pamięć próbek działającą na zasadzie pamięci LUT (\textit{ang.} Look-Up Table) oraz 
+    akumulator fazy. W pamięci znajdują się kolejne wartości cyfrowe sygnału, a akumulator fazy z 
+    każdym taktem zegara adresuje odpowiednie komórki pamięci. Następnie wartości próbek są przekazywana 
+    do przetwornika cyfrowo-analogowego, który przetwarza sygnał cyfrowy na postać analogową. W takich 
+    układach czesto wykorzystuje się nadrzędny procesor, który dostarcza sygnały sterujące. 
+    Dzięki temu układy DDS mogą być łatwo konfigurowane poprzez przeprogramowanie pamięci próbek 
+    lub jednorazowo programowane przez producenta do odtwarzania konkretnego typu sygnałów np. scalone 
+    układy DDS sygnałów sinusoidalnych. W ramach projektu zrealizowano układ bezpośredniej syntezy 
+    cyfrowej z programowalną pamięcią próbek, zaprojektowany w języku Verilog. 

@@ -1,0 +1,22 @@
+\section{Analiza problemu}
+    Generacja przebiegów o zadanych parametrach jest możliwa wykorzystując układy analogowe, 
+    jednak przestrajanie częstotliwości sygnału w szerokim zakresie wiąże się z projektowaniem 
+    wielosekcyjnych przełączanych filtrów. Takie układy zajmują sporo miejsca, ich miniaturyzacja 
+    nie jest taka prosta, a elementy przełączające zużywają się. Ponadto analogowe generatory 
+    funkcyjne najczęściej ograniczają się do generowania kilku rodzai sygnałów. Rozwiązaniem 
+    tych problemów może być generacja sygnału za pomocą syntezy cyfrowej, a następnie jego 
+    przetworzenie na postać analogową, poprzez przetwornik cyfrowo-analogowy. Taką 
+    funkcjonalność zapewniają układy bezpośredniej syntezy cyfrowej - DDS. Wykorzystują one 
+    pamięć do przechowywania wartości próbek, która jest adresowana za pomocą akumulatora fazy. 
+    Akumulator fazy z każdym taktem zegara inkrementuje adres pamięci o zadaną wartość, zwaną krokiem fazowym. 
+    Odczytywane próbki są przekazywane do przetwornika cyfrowo-analogowego, a następnie poddawane filtracji, 
+    filtrem odtwarzającym, którego pasmo przepustowe kończy się przed częstotliwością Nyquist'a. 
+    Dodatkowym atutem jest możliwość przeprogramowania pamięci próbek i wygenerowania 
+    dowolnego sygnału okresowego.\\
+    Układy DDS mają jedną kluczową wadę - nie są w stanie wygenerować sygnału o częstotliwości 
+    wyższej niż połowa ich częstotliwości taktowania, co wynika z twierdzenia o próbkowaniu. 
+    Okazuje się, że można temu zaradzić. Autorzy \cite{FPGA_hs_gen} zaproponowali 
+    wykorzystanie dedykowanych serializerów, dostępnych w układzie FPGA, do zwiększenia 
+    częstotliwości odtwarzania powyżej częstotliwości taktowania logiki sterującej. 
+    Dodatkowo zastosowanie trybu DDR pozwala jeszcze bardziej zwiększyć częstotliwość 
+    odtwarzania. 
