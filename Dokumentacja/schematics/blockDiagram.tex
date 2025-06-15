@@ -1,5 +1,6 @@
 \begin{subfigure}{\textwidth}
-    \hspace{-5cm}
+    \hspace{-5cm}     % do prezentacji !!!
+    % \hspace{0cm}        % do dokumentacji
     \begin{tikzpicture}
         \draw
             (0, 0) node[draw, rectangle, minimum width = 2.5cm, minimum height = 2.5cm, label = {[align = center]center:Akumulator \\fazy}](P_acc){}
@@ -10,6 +11,7 @@
             (4, -4) node[draw, rectangle, minimum width = 2.5cm, minimum height = 2.5cm, label = {[align = center]center:Mikroprocesor}](uP){}
             (4, -8) node[draw, rectangle, minimum width = 2.5cm, minimum height = 2.5cm, label = {[align = center]center:Interfejs \\UART}](UART){}
             (-0.25, -8) node[draw, rectangle, minimum width = 2cm, minimum height = 2cm, label = {[align = center]center:Generacja \\zegara}](CLK){}
+            % (8, 4) node[draw, rectangle, minimum width = 2.5cm, minimum height = 2.5cm, label = {[align = center]center:BIST}](BIST){}
 
             (P_acc) ++ (1.25, 0) -- ++ (1.5, 0) node[inputarrow]{}
             (P_acc) ++ (1.9, -0.1) -- ++ (0.2, 0.2) ++ (-0.1, -0.1) node[above]{addr} node[below]{N} 
@@ -34,6 +36,21 @@
 
             (DAC) ++ (1.25, 0) -- ++ (1.5, 0) node[inputarrow]{}
             (DAC) ++ (2, 0) node[above]{signal} 
+
+            % (SER) ++ (1.25, 0.75) -| ++ (0.75, 3.25) -- ++ (-0.75, 0) node[inputarrow, rotate = 180]{}
+            % (SER) ++ (1.9, 2.15) -- ++ (0.2, 0.2) ++ (-0.1, -0.1) node[left]{8} node[right]{FB}
+
+            % (BIST) ++ (0.75, -1.25) -- ++ (0, -1.5) node[inputarrow, rotate = -90]{}
+            % (BIST) ++ (0.75, -2) node[right]{ctrl}
+
+            % (BIST) ++ (-1.25, -0.75) -| ++ (-0.75, -2.5) -- ++ (0.75, 0) node[inputarrow]{}
+            % (BIST) ++ (-2.1, -1.6) -- ++ (0.2, 0.2) ++ (-0.1, -0.1) node[left]{K} node[right]{PRBS}
+
+            % (BIST) ++ (-2.5, 0.75) -- ++ (1.25, 0) node[inputarrow]{}
+            % (BIST) ++ (-2, 0.75) node[above]{LS\_CLK}
+
+            % (BIST) ++ (-2.5, 0) -- ++ (1.25, 0) node[inputarrow]{}
+            % (BIST) ++ (-2, 0) node[above]{HS\_CLK}
 
             (DAC) ++ (0.5, -2.5) -- ++ (0, 1.25) node[inputarrow, rotate = 90]{}
             (DAC) ++ (0.5, -1.9) node[right]{HS\_CLK}

@@ -3,9 +3,9 @@
 // Company: 
 // Engineer: 
 // 
-// Create Date: 29.05.2025 01:33:30
+// Create Date: 11.06.2025 23:14:23
 // Design Name: 
-// Module Name: CLK_gen_TB
+// Module Name: prbs_test_TB
 // Project Name: 
 // Target Devices: 
 // Tool Versions: 
@@ -20,29 +20,30 @@
 //////////////////////////////////////////////////////////////////////////////////
 
 
-module CLK_gen_TB();
+module prbs_test_TB();
 
-    reg ref_CLK;
-    wire HS_CLK;
-    wire nHS_CLK;
-    wire LS_CLK;
-    wire lock;
+    reg CLK;
+    reg CE;
+    reg RESET;
+    wire [7:0] Q;
     
-    time T_ref_CLK = 10;
+    prbs_test DUT (CLK, CE, RESET, Q);
     
-    CLK_gen DUT(ref_CLK, HS_CLK, nHS_CLK, LS_CLK, lock);
     initial begin
-        ref_CLK <= 0;
-        forever
-        begin
-            #(0.5*T_ref_CLK);
-            ref_CLK <= ~ref_CLK;
+        CLK <= 0;
+        #5;
+        forever begin
+            CLK <= ~CLK;
+            #5;
         end
     end
+    
     initial begin
-        #6000;
+        CE <= 1;
+        RESET <= 1;
+        #10;
+        RESET <= 0;
+        #3000;
         $finish;
     end
-    
-    // 2.3 us do rozpoczecia generacji, 5.5 us locka
 endmodule

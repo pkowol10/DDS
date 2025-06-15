@@ -48,3 +48,12 @@ czy to ma duze znaczenie (T_min = 2.155 ns, co odpowiada f_max = 464 MHz)? Rozwa
 450 MHz (LS_CLK do 112.5 MHz)
 - power report - estymacja zuzycia mocy oraz temperatury ukladu - na ile pokrywa sie z rzeczywistoscia? (na wszelki wypadek, 
 kryzys energetyczny zazegnany przez konfiguracje zegara w .xdc)
+
+komendy:
+
+LOAD - przejscie do trybu ladowania danych
+STEP - zaladowanie kroku fazowego
+GENE - przejscie do trybu generowania sygnału
+BIST - przejscie do trybu testowania (po tescie automatyczne wyslanie wyniku pass/all + zapytanie o raport (y/n))
+STOP - zatrzymanie pracy ukladu
+RESE - software'owy reset DDS'a (RESET wyprowadzic tez na przycisk !!!)

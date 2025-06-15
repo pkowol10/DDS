@@ -26,7 +26,8 @@ module Serializer_8_1_primitive_v2(
     input CE,
     input RESET,
     input [7:0] Data,
-    output Q
+    output Q,
+    output OFB
     );
     // https://docs.amd.com/r/en-US/ug953-vivado-7series-libraries/OSERDESE2
     // OSERDESE2: Output SERial/DESerializer with bitslip

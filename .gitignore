@@ -1,6 +1,7 @@
 DDS.cache/*
 DDS.runs/*
 DDS.sim/*
+*/__pycache__/*
 # *.wcfg
 *.aux
 *.bbl
@@ -16,3 +17,5 @@ DDS.sim/*
 *.synctex.gz
 *.toc
 *.jou
+*.lof
+

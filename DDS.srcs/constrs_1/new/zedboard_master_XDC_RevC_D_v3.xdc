@@ -81,7 +81,7 @@
 # ---------------------------------------------------------------------------- 
 set_property -dict { PACKAGE_PIN Y9   IOSTANDARD LVCMOS33 } [get_ports { ref_CLK }]; # 100MHz
 create_clock -add -name sys_clk_pin -period 10.00 -waveform {0 5} [get_ports { ref_CLK }];
-set_property CLOCK_REGION X0Y0 [get_cells DDS_core/PLL/HS_CLK_BUFR_inst];  #for test
+#set_property CLOCK_REGION X0Y0 [get_cells DDS_core/PLL/HS_CLK_BUFR_inst];  #for test
 
 #set_property PACKAGE_PIN Y9 [get_ports {GCLK}];  # "GCLK"
 

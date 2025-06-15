@@ -23,6 +23,8 @@
 module CLK_gen(
     input ref_CLK,
     output HS_CLK,
+    output nHS_CLK,
+//    output nHS_CLK_rx,
     output LS_CLK,
     output lock
     );
@@ -42,8 +44,8 @@ module CLK_gen(
        .CLKIN1_PERIOD(10),      // Input clock period in ns to ps resolution (i.e. 33.333 is 30 MHz).
        // CLKOUT0_DIVIDE - CLKOUT5_DIVIDE: Divide amount for each CLKOUT (1-128)
        .CLKOUT0_DIVIDE(2),
-       .CLKOUT1_DIVIDE(8),
-       .CLKOUT2_DIVIDE(128),
+       .CLKOUT1_DIVIDE(2),
+       .CLKOUT2_DIVIDE(8),
        .CLKOUT3_DIVIDE(128),
        .CLKOUT4_DIVIDE(128),
        .CLKOUT5_DIVIDE(128),
@@ -55,8 +57,9 @@ module CLK_gen(
        .CLKOUT4_DUTY_CYCLE(0.5),
        .CLKOUT5_DUTY_CYCLE(0.5),
        // CLKOUT0_PHASE - CLKOUT5_PHASE: Phase offset for each CLKOUT (-360.000-360.000).
-       .CLKOUT0_PHASE(0.0),
-       .CLKOUT1_PHASE(0.0),
+       .CLKOUT0_PHASE(-20.0),       // post impl sim
+//       .CLKOUT0_PHASE(0.0),       // behav sim
+       .CLKOUT1_PHASE(180.0),
        .CLKOUT2_PHASE(0.0),
        .CLKOUT3_PHASE(0.0),
        .CLKOUT4_PHASE(0.0),
@@ -68,8 +71,8 @@ module CLK_gen(
     PLLE2_BASE_inst (
        // Clock Outputs: 1-bit (each) output: User configurable clock outputs
        .CLKOUT0(HS_CLK),   // 1-bit output: CLKOUT0
-       .CLKOUT1(LS_CLK),   // 1-bit output: CLKOUT1
-       .CLKOUT2(CLKOUT2),   // 1-bit output: CLKOUT2
+       .CLKOUT1(nHS_CLK),   // 1-bit output: CLKOUT1
+       .CLKOUT2(LS_CLK),   // 1-bit output: CLKOUT2
        .CLKOUT3(CLKOUT3),   // 1-bit output: CLKOUT3
        .CLKOUT4(CLKOUT4),   // 1-bit output: CLKOUT4
        .CLKOUT5(CLKOUT5),   // 1-bit output: CLKOUT5

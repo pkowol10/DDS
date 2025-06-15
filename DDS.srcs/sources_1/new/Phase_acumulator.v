@@ -38,7 +38,8 @@ module Phase_acumulator # (parameter version = 1, parameter w_step = 8, paramete
 
             wire [K:0] C;
             wire [w_out-1:0] int_step;
-            assign int_step = step;
+            assign int_step[w_step-1:0] = step;
+            assign int_step[w_out-1:w_step] = 0;
             assign C[0] = 0;
             for (i = 0; i < K; i = i + 1) 
             begin

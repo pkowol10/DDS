@@ -11,15 +11,15 @@
       </db_ref>
    </db_ref_list>
    <zoom_setting>
-      <ZoomStartTime time="5455700000fs"></ZoomStartTime>
-      <ZoomEndTime time="5597100001fs"></ZoomEndTime>
-      <Cursor1Time time="5500000000fs"></Cursor1Time>
+      <ZoomStartTime time="13478307000fs"></ZoomStartTime>
+      <ZoomEndTime time="13600907001fs"></ZoomEndTime>
+      <Cursor1Time time="13523307000fs"></Cursor1Time>
    </zoom_setting>
    <column_width_setting>
-      <NameColumnWidth column_width="130"></NameColumnWidth>
-      <ValueColumnWidth column_width="72"></ValueColumnWidth>
+      <NameColumnWidth column_width="170"></NameColumnWidth>
+      <ValueColumnWidth column_width="135"></ValueColumnWidth>
    </column_width_setting>
-   <WVObjectSize size="19" />
+   <WVObjectSize size="33" />
    <wvobject fp_name="/DDS_core_TB/ref_CLK" type="logic">
       <obj_property name="ElementShortName">ref_CLK</obj_property>
       <obj_property name="ObjectShortName">ref_CLK</obj_property>
@@ -47,6 +47,7 @@
    <wvobject fp_name="/DDS_core_TB/sample" type="array">
       <obj_property name="ElementShortName">sample[7:0]</obj_property>
       <obj_property name="ObjectShortName">sample[7:0]</obj_property>
+      <obj_property name="isExpanded"></obj_property>
    </wvobject>
    <wvobject fp_name="/DDS_core_TB/LS_CLK" type="logic">
       <obj_property name="ElementShortName">LS_CLK</obj_property>
@@ -63,6 +64,62 @@
    <wvobject fp_name="/DDS_core_TB/dataEN" type="logic">
       <obj_property name="ElementShortName">dataEN</obj_property>
       <obj_property name="ObjectShortName">dataEN</obj_property>
+   </wvobject>
+   <wvobject fp_name="/DDS_core_TB/DUT/BIST/DES_out" type="array">
+      <obj_property name="ElementShortName">DES_out[63:0]</obj_property>
+      <obj_property name="ObjectShortName">DES_out[63:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/DDS_core_TB/DUT/BIST/DES_out_del" type="array">
+      <obj_property name="ElementShortName">DES_out_del[63:0]</obj_property>
+      <obj_property name="ObjectShortName">DES_out_del[63:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/DDS_core_TB/DUT/BIST/DES_out_int" type="array">
+      <obj_property name="ElementShortName">DES_out_int[63:0]</obj_property>
+      <obj_property name="ObjectShortName">DES_out_int[63:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/DDS_core_TB/DUT/data_BIST" type="array">
+      <obj_property name="ElementShortName">data_BIST[63:0]</obj_property>
+      <obj_property name="ObjectShortName">data_BIST[63:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/DDS_core_TB/DUT/BIST/Din_del1" type="array">
+      <obj_property name="ElementShortName">Din_del1[63:0]</obj_property>
+      <obj_property name="ObjectShortName">Din_del1[63:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/DDS_core_TB/DUT/BIST/Din_del2" type="array">
+      <obj_property name="ElementShortName">Din_del2[63:0]</obj_property>
+      <obj_property name="ObjectShortName">Din_del2[63:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/DDS_core_TB/DUT/BIST/Din_del3" type="array">
+      <obj_property name="ElementShortName">Din_del3[63:0]</obj_property>
+      <obj_property name="ObjectShortName">Din_del3[63:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/DDS_core_TB/DUT/BIST/Din_del4" type="array">
+      <obj_property name="ElementShortName">Din_del4[63:0]</obj_property>
+      <obj_property name="ObjectShortName">Din_del4[63:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/DDS_core_TB/BIST_correct" type="logic">
+      <obj_property name="ElementShortName">BIST_correct</obj_property>
+      <obj_property name="ObjectShortName">BIST_correct</obj_property>
+   </wvobject>
+   <wvobject fp_name="/DDS_core_TB/DUT/BIST/prbs_en" type="logic">
+      <obj_property name="ElementShortName">prbs_en</obj_property>
+      <obj_property name="ObjectShortName">prbs_en</obj_property>
+   </wvobject>
+   <wvobject fp_name="/DDS_core_TB/DUT/BIST/Del/Delin" type="logic">
+      <obj_property name="ElementShortName">Delin</obj_property>
+      <obj_property name="ObjectShortName">Delin</obj_property>
+   </wvobject>
+   <wvobject fp_name="/DDS_core_TB/DUT/BIST/Del/del_int" type="array">
+      <obj_property name="ElementShortName">del_int[1:0]</obj_property>
+      <obj_property name="ObjectShortName">del_int[1:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/DDS_core_TB/DUT/BIST/Del/DelCE" type="logic">
+      <obj_property name="ElementShortName">DelCE</obj_property>
+      <obj_property name="ObjectShortName">DelCE</obj_property>
+   </wvobject>
+   <wvobject fp_name="/DDS_core_TB/DUT/BIST/prbs" type="array">
+      <obj_property name="ElementShortName">prbs[63:0]</obj_property>
+      <obj_property name="ObjectShortName">prbs[63:0]</obj_property>
    </wvobject>
    <wvobject fp_name="/DDS_core_TB/data_buf" type="array">
       <obj_property name="ElementShortName">data_buf[63:0]</obj_property>

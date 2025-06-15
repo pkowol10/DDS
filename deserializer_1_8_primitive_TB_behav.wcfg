@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wave_config>
+   <wave_state>
+   </wave_state>
+   <db_ref_list>
+      <db_ref path="deserializer_1_8_primitive_TB_behav.wdb" id="1">
+         <top_modules>
+            <top_module name="deserializer_1_8_primitive_TB" />
+            <top_module name="glbl" />
+         </top_modules>
+      </db_ref>
+   </db_ref_list>
+   <zoom_setting>
+      <ZoomStartTime time="157750000fs"></ZoomStartTime>
+      <ZoomEndTime time="224950001fs"></ZoomEndTime>
+      <Cursor1Time time="174000000fs"></Cursor1Time>
+   </zoom_setting>
+   <column_width_setting>
+      <NameColumnWidth column_width="115"></NameColumnWidth>
+      <ValueColumnWidth column_width="72"></ValueColumnWidth>
+   </column_width_setting>
+   <WVObjectSize size="15" />
+   <wvobject fp_name="/deserializer_1_8_primitive_TB/LS_CLK" type="logic">
+      <obj_property name="ElementShortName">LS_CLK</obj_property>
+      <obj_property name="ObjectShortName">LS_CLK</obj_property>
+   </wvobject>
+   <wvobject fp_name="/deserializer_1_8_primitive_TB/HS_CLK" type="logic">
+      <obj_property name="ElementShortName">HS_CLK</obj_property>
+      <obj_property name="ObjectShortName">HS_CLK</obj_property>
+   </wvobject>
+   <wvobject fp_name="/deserializer_1_8_primitive_TB/nHS_CLK" type="logic">
+      <obj_property name="ElementShortName">nHS_CLK</obj_property>
+      <obj_property name="ObjectShortName">nHS_CLK</obj_property>
+   </wvobject>
+   <wvobject fp_name="/deserializer_1_8_primitive_TB/CE" type="logic">
+      <obj_property name="ElementShortName">CE</obj_property>
+      <obj_property name="ObjectShortName">CE</obj_property>
+   </wvobject>
+   <wvobject fp_name="/deserializer_1_8_primitive_TB/RESET" type="logic">
+      <obj_property name="ElementShortName">RESET</obj_property>
+      <obj_property name="ObjectShortName">RESET</obj_property>
+   </wvobject>
+   <wvobject fp_name="/deserializer_1_8_primitive_TB/data_in" type="logic">
+      <obj_property name="ElementShortName">data_in</obj_property>
+      <obj_property name="ObjectShortName">data_in</obj_property>
+   </wvobject>
+   <wvobject fp_name="/deserializer_1_8_primitive_TB/data_out" type="array">
+      <obj_property name="ElementShortName">data_out[7:0]</obj_property>
+      <obj_property name="ObjectShortName">data_out[7:0]</obj_property>
+      <obj_property name="isExpanded"></obj_property>
+   </wvobject>
+   <wvobject fp_name="/deserializer_1_8_primitive_TB/prbsEn" type="logic">
+      <obj_property name="ElementShortName">prbsEn</obj_property>
+      <obj_property name="ObjectShortName">prbsEn</obj_property>
+   </wvobject>
+   <wvobject fp_name="/deserializer_1_8_primitive_TB/T_CLK" type="array">
+      <obj_property name="ElementShortName">T_CLK[63:0]</obj_property>
+      <obj_property name="ObjectShortName">T_CLK[63:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/deserializer_1_8_primitive_TB/prbs" type="array">
+      <obj_property name="ElementShortName">prbs[15:0]</obj_property>
+      <obj_property name="ObjectShortName">prbs[15:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/deserializer_1_8_primitive_TB/Din" type="array">
+      <obj_property name="ElementShortName">Din[7:0]</obj_property>
+      <obj_property name="ObjectShortName">Din[7:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/deserializer_1_8_primitive_TB/Din_del1" type="array">
+      <obj_property name="ElementShortName">Din_del1[7:0]</obj_property>
+      <obj_property name="ObjectShortName">Din_del1[7:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/deserializer_1_8_primitive_TB/Din_del2" type="array">
+      <obj_property name="ElementShortName">Din_del2[7:0]</obj_property>
+      <obj_property name="ObjectShortName">Din_del2[7:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/deserializer_1_8_primitive_TB/sel" type="array">
+      <obj_property name="ElementShortName">sel[2:0]</obj_property>
+      <obj_property name="ObjectShortName">sel[2:0]</obj_property>
+      <obj_property name="isExpanded"></obj_property>
+   </wvobject>
+   <wvobject fp_name="/deserializer_1_8_primitive_TB/correct" type="logic">
+      <obj_property name="ElementShortName">correct</obj_property>
+      <obj_property name="ObjectShortName">correct</obj_property>
+   </wvobject>
+</wave_config>
