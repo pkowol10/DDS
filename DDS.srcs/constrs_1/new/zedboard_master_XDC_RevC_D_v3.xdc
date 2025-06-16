@@ -88,14 +88,14 @@ create_clock -add -name sys_clk_pin -period 10.00 -waveform {0 5} [get_ports { r
 # ----------------------------------------------------------------------------
 ## JA Pmod - Bank 13
 ## ---------------------------------------------------------------------------- 
-#set_property PACKAGE_PIN Y11  [get_ports {JA1}];  # "JA1"
-#set_property PACKAGE_PIN AA8  [get_ports {JA10}];  # "JA10"
-#set_property PACKAGE_PIN AA11 [get_ports {JA2}];  # "JA2"
-#set_property PACKAGE_PIN Y10  [get_ports {JA3}];  # "JA3"
-#set_property PACKAGE_PIN AA9  [get_ports {JA4}];  # "JA4"
-#set_property PACKAGE_PIN AB11 [get_ports {JA7}];  # "JA7"
-#set_property PACKAGE_PIN AB10 [get_ports {JA8}];  # "JA8"
-#set_property PACKAGE_PIN AB9  [get_ports {JA9}];  # "JA9"
+set_property PACKAGE_PIN Y11  [get_ports {Sample[7]}];  # "JA1"
+set_property PACKAGE_PIN AA8  [get_ports {Sample[0]}];  # "JA10"
+set_property PACKAGE_PIN AA11 [get_ports {Sample[6]}];  # "JA2"
+set_property PACKAGE_PIN Y10  [get_ports {Sample[5]}];  # "JA3"
+set_property PACKAGE_PIN AA9  [get_ports {Sample[4]}];  # "JA4"
+set_property PACKAGE_PIN AB11 [get_ports {Sample[3]}];  # "JA7"
+set_property PACKAGE_PIN AB10 [get_ports {Sample[2]}];  # "JA8"
+set_property PACKAGE_PIN AB9  [get_ports {Sample[1]}];  # "JA9"
 
 
 # ----------------------------------------------------------------------------
@@ -206,7 +206,7 @@ create_clock -add -name sys_clk_pin -period 10.00 -waveform {0 5} [get_ports { r
 # ----------------------------------------------------------------------------
 ## User Push Buttons - Bank 34
 ## ---------------------------------------------------------------------------- 
-#set_property PACKAGE_PIN P16 [get_ports {BTNC}];  # "BTNC"
+set_property PACKAGE_PIN P16 [get_ports {RESET}];  # "BTNC"
 #set_property PACKAGE_PIN R16 [get_ports {BTND}];  # "BTND"
 #set_property PACKAGE_PIN N15 [get_ports {BTNL}];  # "BTNL"
 #set_property PACKAGE_PIN R18 [get_ports {BTNR}];  # "BTNR"
@@ -381,8 +381,8 @@ set_property IOSTANDARD LVCMOS33 [get_ports -of_objects [get_iobanks 13]];
 
 
 # DDS memory config
-set_property RDADDR_COLLISION_HWCONFIG PERFORMANCE [get_cells eeprom_reg]
-set_property WRITE_MODE_A READ_FIRST [get_cells eeprom_reg]
-set_property WRITE_MODE_B READ_FIRST [get_cells eeprom_reg]
+#set_property RDADDR_COLLISION_HWCONFIG PERFORMANCE [get_cells eeprom_reg]
+#set_property WRITE_MODE_A READ_FIRST [get_cells eeprom_reg]
+#set_property WRITE_MODE_B READ_FIRST [get_cells eeprom_reg]
 
 

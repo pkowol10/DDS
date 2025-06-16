@@ -1,0 +1,545 @@
+#-----------------------------------------------------------
+# Vivado v2018.3 (64-bit)
+# SW Build 2405991 on Thu Dec  6 23:38:27 MST 2018
+# IP Build 2404404 on Fri Dec  7 01:43:56 MST 2018
+# Start of session at: Mon Jun 16 23:10:11 2025
+# Process ID: 36524
+# Current directory: c:/Users/pkowo/Desktop/Studia/SystemyDedykowane/Projekt/ip_repo/edit_DDS_core_ip_v1_0.runs/synth_1
+# Command line: vivado.exe -log DDS_core_ip_v1_0.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source DDS_core_ip_v1_0.tcl
+# Log file: c:/Users/pkowo/Desktop/Studia/SystemyDedykowane/Projekt/ip_repo/edit_DDS_core_ip_v1_0.runs/synth_1/DDS_core_ip_v1_0.vds
+# Journal file: c:/Users/pkowo/Desktop/Studia/SystemyDedykowane/Projekt/ip_repo/edit_DDS_core_ip_v1_0.runs/synth_1\vivado.jou
+#-----------------------------------------------------------
+source DDS_core_ip_v1_0.tcl -notrace
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1700] Loaded user IP repository 'c:/Users/pkowo/Desktop/Studia/SystemyDedykowane/Laboratorium/lab3/ip_repo'.
+INFO: [IP_Flow 19-2313] Loaded Vivado IP repository 'D:/Xilinx/Vivado/2018.3/data/ip'.
+WARNING: [IP_Flow 19-4995] The host OS only allows 260 characters in a normal path. The IP cache path is more than 80 characters. If you experience issues with IP caching, please consider changing the IP cache to a location with a shorter path. Alternately consider using the OS subst command to map part of the path to a drive letter. 
+Current IP cache path is c:/users/pkowo/desktop/studia/systemydedykowane/projekt/ip_repo/edit_DDS_core_ip_v1_0.cache/ip 
+WARNING: [filemgmt 56-99] Vivado Synthesis ignores library specification for Verilog or SystemVerilog files. [c:/Users/pkowo/Desktop/Studia/SystemyDedykowane/Projekt/ip_repo/DDS_core_ip_1.0/hdl/DDS_core_ip_v1_0_S00_AXI.v:]
+WARNING: [filemgmt 56-99] Vivado Synthesis ignores library specification for Verilog or SystemVerilog files. [c:/Users/pkowo/Desktop/Studia/SystemyDedykowane/Projekt/ip_repo/DDS_core_ip_1.0/hdl/DDS_core_ip_v1_0.v:]
+Command: synth_design -top DDS_core_ip_v1_0 -part xc7z020clg484-1
+Starting synth_design
+Attempting to get a license for feature 'Synthesis' and/or device 'xc7z020'
+INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7z020'
+INFO: Launching helper process for spawning children vivado processes
+INFO: Helper process launched with PID 3460 
+WARNING: [Synth 8-2507] parameter declaration becomes local in BRAM_Controller with formal parameter declaration list [c:/Users/pkowo/Desktop/Studia/SystemyDedykowane/Projekt/ip_repo/DDS_core_ip_1.0/src/BRAM_Controller.v:35]
+WARNING: [Synth 8-2507] parameter declaration becomes local in DDS_core with formal parameter declaration list [c:/Users/pkowo/Desktop/Studia/SystemyDedykowane/Projekt/ip_repo/DDS_core_ip_1.0/src/DDS_core.v:53]
+WARNING: [Synth 8-2507] parameter declaration becomes local in Delay with formal parameter declaration list [c:/Users/pkowo/Desktop/Studia/SystemyDedykowane/Projekt/ip_repo/DDS_core_ip_1.0/src/Delay.v:32]
+WARNING: [Synth 8-2507] parameter declaration becomes local in Phase_acumulator with formal parameter declaration list [c:/Users/pkowo/Desktop/Studia/SystemyDedykowane/Projekt/ip_repo/DDS_core_ip_1.0/src/Phase_acumulator.v:33]
+---------------------------------------------------------------------------------
+Starting Synthesize : Time (s): cpu = 00:00:03 ; elapsed = 00:00:02 . Memory (MB): peak = 478.645 ; gain = 115.578
+---------------------------------------------------------------------------------
+INFO: [Synth 8-6157] synthesizing module 'DDS_core_ip_v1_0' [c:/Users/pkowo/Desktop/Studia/SystemyDedykowane/Projekt/ip_repo/DDS_core_ip_1.0/hdl/DDS_core_ip_v1_0.v:4]
+	Parameter C_S00_AXI_DATA_WIDTH bound to: 32 - type: integer 
+	Parameter C_S00_AXI_ADDR_WIDTH bound to: 5 - type: integer 
+INFO: [Synth 8-6157] synthesizing module 'DDS_core_ip_v1_0_S00_AXI' [c:/Users/pkowo/Desktop/Studia/SystemyDedykowane/Projekt/ip_repo/DDS_core_ip_1.0/hdl/DDS_core_ip_v1_0_S00_AXI.v:4]
+	Parameter C_S_AXI_DATA_WIDTH bound to: 32 - type: integer 
+	Parameter C_S_AXI_ADDR_WIDTH bound to: 5 - type: integer 
+	Parameter ADDR_LSB bound to: 2 - type: integer 
+	Parameter OPT_MEM_ADDR_BITS bound to: 2 - type: integer 
+INFO: [Synth 8-6157] synthesizing module 'DDS_core' [c:/Users/pkowo/Desktop/Studia/SystemyDedykowane/Projekt/ip_repo/DDS_core_ip_1.0/src/DDS_core.v:24]
+	Parameter w_step bound to: 14 - type: integer 
+	Parameter w_PA bound to: 24 - type: integer 
+	Parameter w_addr bound to: 10 - type: integer 
+	Parameter w_data bound to: 64 - type: integer 
+	Parameter w_sample bound to: 8 - type: integer 
+	Parameter N bound to: 4 - type: integer 
+	Parameter BIST_byte_slip bound to: 3 - type: integer 
+INFO: [Synth 8-6157] synthesizing module 'Serializer_8_1_primitive_v2' [c:/Users/pkowo/Desktop/Studia/SystemyDedykowane/Projekt/ip_repo/DDS_core_ip_1.0/src/Serializer_8_1_primitive_v2.v:23]
+INFO: [Synth 8-6157] synthesizing module 'OSERDESE2' [D:/Xilinx/Vivado/2018.3/scripts/rt/data/unisim_comp.v:32215]
+	Parameter DATA_RATE_OQ bound to: DDR - type: string 
+	Parameter DATA_RATE_TQ bound to: DDR - type: string 
+	Parameter DATA_WIDTH bound to: 8 - type: integer 
+	Parameter INIT_OQ bound to: 1'b0 
+	Parameter INIT_TQ bound to: 1'b0 
+	Parameter IS_CLKDIV_INVERTED bound to: 1'b0 
+	Parameter IS_CLK_INVERTED bound to: 1'b0 
+	Parameter IS_D1_INVERTED bound to: 1'b0 
+	Parameter IS_D2_INVERTED bound to: 1'b0 
+	Parameter IS_D3_INVERTED bound to: 1'b0 
+	Parameter IS_D4_INVERTED bound to: 1'b0 
+	Parameter IS_D5_INVERTED bound to: 1'b0 
+	Parameter IS_D6_INVERTED bound to: 1'b0 
+	Parameter IS_D7_INVERTED bound to: 1'b0 
+	Parameter IS_D8_INVERTED bound to: 1'b0 
+	Parameter IS_T1_INVERTED bound to: 1'b0 
+	Parameter IS_T2_INVERTED bound to: 1'b0 
+	Parameter IS_T3_INVERTED bound to: 1'b0 
+	Parameter IS_T4_INVERTED bound to: 1'b0 
+	Parameter SERDES_MODE bound to: MASTER - type: string 
+	Parameter SRVAL_OQ bound to: 1'b0 
+	Parameter SRVAL_TQ bound to: 1'b0 
+	Parameter TBYTE_CTL bound to: FALSE - type: string 
+	Parameter TBYTE_SRC bound to: FALSE - type: string 
+	Parameter TRISTATE_WIDTH bound to: 1 - type: integer 
+INFO: [Synth 8-6155] done synthesizing module 'OSERDESE2' (1#1) [D:/Xilinx/Vivado/2018.3/scripts/rt/data/unisim_comp.v:32215]
+WARNING: [Synth 8-3848] Net SHIFTIN1 in module/entity Serializer_8_1_primitive_v2 does not have driver. [c:/Users/pkowo/Desktop/Studia/SystemyDedykowane/Projekt/ip_repo/DDS_core_ip_1.0/src/Serializer_8_1_primitive_v2.v:73]
+WARNING: [Synth 8-3848] Net SHIFTIN2 in module/entity Serializer_8_1_primitive_v2 does not have driver. [c:/Users/pkowo/Desktop/Studia/SystemyDedykowane/Projekt/ip_repo/DDS_core_ip_1.0/src/Serializer_8_1_primitive_v2.v:74]
+INFO: [Synth 8-6155] done synthesizing module 'Serializer_8_1_primitive_v2' (2#1) [c:/Users/pkowo/Desktop/Studia/SystemyDedykowane/Projekt/ip_repo/DDS_core_ip_1.0/src/Serializer_8_1_primitive_v2.v:23]
+INFO: [Synth 8-6157] synthesizing module 'CLK_gen' [c:/Users/pkowo/Desktop/Studia/SystemyDedykowane/Projekt/ip_repo/DDS_core_ip_1.0/src/CLK_gen.v:23]
+INFO: [Synth 8-6157] synthesizing module 'PLLE2_BASE' [D:/Xilinx/Vivado/2018.3/scripts/rt/data/unisim_comp.v:41124]
+	Parameter BANDWIDTH bound to: LOW - type: string 
+	Parameter CLKFBOUT_MULT bound to: 9 - type: integer 
+	Parameter CLKFBOUT_PHASE bound to: 0.000000 - type: float 
+	Parameter CLKIN1_PERIOD bound to: 10.000000 - type: float 
+	Parameter CLKOUT0_DIVIDE bound to: 2 - type: integer 
+	Parameter CLKOUT0_DUTY_CYCLE bound to: 0.500000 - type: float 
+	Parameter CLKOUT0_PHASE bound to: -22.500000 - type: float 
+	Parameter CLKOUT1_DIVIDE bound to: 2 - type: integer 
+	Parameter CLKOUT1_DUTY_CYCLE bound to: 0.500000 - type: float 
+	Parameter CLKOUT1_PHASE bound to: 180.000000 - type: float 
+	Parameter CLKOUT2_DIVIDE bound to: 8 - type: integer 
+	Parameter CLKOUT2_DUTY_CYCLE bound to: 0.500000 - type: float 
+	Parameter CLKOUT2_PHASE bound to: 0.000000 - type: float 
+	Parameter CLKOUT3_DIVIDE bound to: 128 - type: integer 
+	Parameter CLKOUT3_DUTY_CYCLE bound to: 0.500000 - type: float 
+	Parameter CLKOUT3_PHASE bound to: 0.000000 - type: float 
+	Parameter CLKOUT4_DIVIDE bound to: 128 - type: integer 
+	Parameter CLKOUT4_DUTY_CYCLE bound to: 0.500000 - type: float 
+	Parameter CLKOUT4_PHASE bound to: 0.000000 - type: float 
+	Parameter CLKOUT5_DIVIDE bound to: 128 - type: integer 
+	Parameter CLKOUT5_DUTY_CYCLE bound to: 0.500000 - type: float 
+	Parameter CLKOUT5_PHASE bound to: 0.000000 - type: float 
+	Parameter DIVCLK_DIVIDE bound to: 1 - type: integer 
+	Parameter REF_JITTER1 bound to: 0.000000 - type: float 
+	Parameter STARTUP_WAIT bound to: TRUE - type: string 
+INFO: [Synth 8-6155] done synthesizing module 'PLLE2_BASE' (3#1) [D:/Xilinx/Vivado/2018.3/scripts/rt/data/unisim_comp.v:41124]
+INFO: [Synth 8-6155] done synthesizing module 'CLK_gen' (4#1) [c:/Users/pkowo/Desktop/Studia/SystemyDedykowane/Projekt/ip_repo/DDS_core_ip_1.0/src/CLK_gen.v:23]
+INFO: [Synth 8-6157] synthesizing module 'Phase_acumulator' [c:/Users/pkowo/Desktop/Studia/SystemyDedykowane/Projekt/ip_repo/DDS_core_ip_1.0/src/Phase_acumulator.v:23]
+	Parameter version bound to: 1 - type: integer 
+	Parameter w_step bound to: 14 - type: integer 
+	Parameter w_out bound to: 24 - type: integer 
+	Parameter N bound to: 4 - type: integer 
+	Parameter K bound to: 6 - type: integer 
+INFO: [Synth 8-6157] synthesizing module 'Skip_adder' [c:/Users/pkowo/Desktop/Studia/SystemyDedykowane/Projekt/ip_repo/DDS_core_ip_1.0/src/Skip_adder.v:23]
+	Parameter W bound to: 4 - type: integer 
+INFO: [Synth 8-6155] done synthesizing module 'Skip_adder' (5#1) [c:/Users/pkowo/Desktop/Studia/SystemyDedykowane/Projekt/ip_repo/DDS_core_ip_1.0/src/Skip_adder.v:23]
+INFO: [Synth 8-6155] done synthesizing module 'Phase_acumulator' (6#1) [c:/Users/pkowo/Desktop/Studia/SystemyDedykowane/Projekt/ip_repo/DDS_core_ip_1.0/src/Phase_acumulator.v:23]
+INFO: [Synth 8-6157] synthesizing module 'BRAM_Controller' [c:/Users/pkowo/Desktop/Studia/SystemyDedykowane/Projekt/ip_repo/DDS_core_ip_1.0/src/BRAM_Controller.v:23]
+	Parameter waddr bound to: 10 - type: integer 
+	Parameter wdata bound to: 64 - type: integer 
+	Parameter memLoadFile bound to: MemoryData.mem - type: string 
+INFO: [Synth 8-3876] $readmem data file 'MemoryData.mem' is read successfully [c:/Users/pkowo/Desktop/Studia/SystemyDedykowane/Projekt/ip_repo/DDS_core_ip_1.0/src/BRAM_Controller.v:51]
+INFO: [Synth 8-6155] done synthesizing module 'BRAM_Controller' (7#1) [c:/Users/pkowo/Desktop/Studia/SystemyDedykowane/Projekt/ip_repo/DDS_core_ip_1.0/src/BRAM_Controller.v:23]
+INFO: [Synth 8-6157] synthesizing module 'BIST_logic' [c:/Users/pkowo/Desktop/Studia/SystemyDedykowane/Projekt/ip_repo/DDS_core_ip_1.0/src/BIST_logic.v:23]
+	Parameter w_data bound to: 64 - type: integer 
+	Parameter w_sample bound to: 8 - type: integer 
+	Parameter byte_slip bound to: 3 - type: integer 
+INFO: [Synth 8-6157] synthesizing module 'deserializer_1_8_primitive' [c:/Users/pkowo/Desktop/Studia/SystemyDedykowane/Projekt/ip_repo/DDS_core_ip_1.0/src/deserializer_1_8_primitive.v:23]
+INFO: [Synth 8-6157] synthesizing module 'ISERDESE2' [D:/Xilinx/Vivado/2018.3/scripts/rt/data/unisim_comp.v:25967]
+	Parameter DATA_RATE bound to: DDR - type: string 
+	Parameter DATA_WIDTH bound to: 8 - type: integer 
+	Parameter DYN_CLKDIV_INV_EN bound to: FALSE - type: string 
+	Parameter DYN_CLK_INV_EN bound to: FALSE - type: string 
+	Parameter INIT_Q1 bound to: 1'b0 
+	Parameter INIT_Q2 bound to: 1'b0 
+	Parameter INIT_Q3 bound to: 1'b0 
+	Parameter INIT_Q4 bound to: 1'b0 
+	Parameter INTERFACE_TYPE bound to: NETWORKING - type: string 
+	Parameter IOBDELAY bound to: NONE - type: string 
+	Parameter IS_CLKB_INVERTED bound to: 1'b0 
+	Parameter IS_CLKDIVP_INVERTED bound to: 1'b0 
+	Parameter IS_CLKDIV_INVERTED bound to: 1'b0 
+	Parameter IS_CLK_INVERTED bound to: 1'b0 
+	Parameter IS_D_INVERTED bound to: 1'b0 
+	Parameter IS_OCLKB_INVERTED bound to: 1'b0 
+	Parameter IS_OCLK_INVERTED bound to: 1'b0 
+	Parameter NUM_CE bound to: 1 - type: integer 
+	Parameter OFB_USED bound to: TRUE - type: string 
+	Parameter SERDES_MODE bound to: MASTER - type: string 
+	Parameter SRVAL_Q1 bound to: 1'b0 
+	Parameter SRVAL_Q2 bound to: 1'b0 
+	Parameter SRVAL_Q3 bound to: 1'b0 
+	Parameter SRVAL_Q4 bound to: 1'b0 
+INFO: [Synth 8-6155] done synthesizing module 'ISERDESE2' (8#1) [D:/Xilinx/Vivado/2018.3/scripts/rt/data/unisim_comp.v:25967]
+WARNING: [Synth 8-3848] Net OCLKin in module/entity deserializer_1_8_primitive does not have driver. [c:/Users/pkowo/Desktop/Studia/SystemyDedykowane/Projekt/ip_repo/DDS_core_ip_1.0/src/deserializer_1_8_primitive.v:98]
+WARNING: [Synth 8-3848] Net OCLKBin in module/entity deserializer_1_8_primitive does not have driver. [c:/Users/pkowo/Desktop/Studia/SystemyDedykowane/Projekt/ip_repo/DDS_core_ip_1.0/src/deserializer_1_8_primitive.v:106]
+INFO: [Synth 8-6155] done synthesizing module 'deserializer_1_8_primitive' (9#1) [c:/Users/pkowo/Desktop/Studia/SystemyDedykowane/Projekt/ip_repo/DDS_core_ip_1.0/src/deserializer_1_8_primitive.v:23]
+INFO: [Synth 8-6157] synthesizing module 'Delay' [c:/Users/pkowo/Desktop/Studia/SystemyDedykowane/Projekt/ip_repo/DDS_core_ip_1.0/src/Delay.v:23]
+	Parameter delay bound to: 3 - type: integer 
+	Parameter w bound to: 2 - type: integer 
+INFO: [Synth 8-6155] done synthesizing module 'Delay' (10#1) [c:/Users/pkowo/Desktop/Studia/SystemyDedykowane/Projekt/ip_repo/DDS_core_ip_1.0/src/Delay.v:23]
+WARNING: [Synth 8-6014] Unused sequential element Din_del5_reg was removed.  [c:/Users/pkowo/Desktop/Studia/SystemyDedykowane/Projekt/ip_repo/DDS_core_ip_1.0/src/BIST_logic.v:104]
+INFO: [Synth 8-6155] done synthesizing module 'BIST_logic' (11#1) [c:/Users/pkowo/Desktop/Studia/SystemyDedykowane/Projekt/ip_repo/DDS_core_ip_1.0/src/BIST_logic.v:23]
+INFO: [Synth 8-6157] synthesizing module 'Debouncer' [c:/Users/pkowo/Desktop/Studia/SystemyDedykowane/Projekt/ip_repo/DDS_core_ip_1.0/src/Debouncer.v:23]
+INFO: [Synth 8-6155] done synthesizing module 'Debouncer' (12#1) [c:/Users/pkowo/Desktop/Studia/SystemyDedykowane/Projekt/ip_repo/DDS_core_ip_1.0/src/Debouncer.v:23]
+INFO: [Synth 8-6155] done synthesizing module 'DDS_core' (13#1) [c:/Users/pkowo/Desktop/Studia/SystemyDedykowane/Projekt/ip_repo/DDS_core_ip_1.0/src/DDS_core.v:24]
+WARNING: [Synth 8-689] width (24) of port connection 'step' does not match port width (14) of module 'DDS_core' [c:/Users/pkowo/Desktop/Studia/SystemyDedykowane/Projekt/ip_repo/DDS_core_ip_1.0/hdl/DDS_core_ip_v1_0_S00_AXI.v:437]
+INFO: [Synth 8-6155] done synthesizing module 'DDS_core_ip_v1_0_S00_AXI' (14#1) [c:/Users/pkowo/Desktop/Studia/SystemyDedykowane/Projekt/ip_repo/DDS_core_ip_1.0/hdl/DDS_core_ip_v1_0_S00_AXI.v:4]
+INFO: [Synth 8-6155] done synthesizing module 'DDS_core_ip_v1_0' (15#1) [c:/Users/pkowo/Desktop/Studia/SystemyDedykowane/Projekt/ip_repo/DDS_core_ip_1.0/hdl/DDS_core_ip_v1_0.v:4]
+WARNING: [Synth 8-3331] design DDS_core_ip_v1_0_S00_AXI has unconnected port S_AXI_AWPROT[2]
+WARNING: [Synth 8-3331] design DDS_core_ip_v1_0_S00_AXI has unconnected port S_AXI_AWPROT[1]
+WARNING: [Synth 8-3331] design DDS_core_ip_v1_0_S00_AXI has unconnected port S_AXI_AWPROT[0]
+WARNING: [Synth 8-3331] design DDS_core_ip_v1_0_S00_AXI has unconnected port S_AXI_ARPROT[2]
+WARNING: [Synth 8-3331] design DDS_core_ip_v1_0_S00_AXI has unconnected port S_AXI_ARPROT[1]
+WARNING: [Synth 8-3331] design DDS_core_ip_v1_0_S00_AXI has unconnected port S_AXI_ARPROT[0]
+---------------------------------------------------------------------------------
+Finished Synthesize : Time (s): cpu = 00:00:03 ; elapsed = 00:00:03 . Memory (MB): peak = 515.082 ; gain = 152.016
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Constraint Validation : Time (s): cpu = 00:00:03 ; elapsed = 00:00:03 . Memory (MB): peak = 515.082 ; gain = 152.016
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Loading Part and Timing Information
+---------------------------------------------------------------------------------
+Loading part: xc7z020clg484-1
+---------------------------------------------------------------------------------
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:03 ; elapsed = 00:00:03 . Memory (MB): peak = 515.082 ; gain = 152.016
+---------------------------------------------------------------------------------
+INFO: [Device 21-403] Loading part xc7z020clg484-1
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:04 ; elapsed = 00:00:03 . Memory (MB): peak = 515.082 ; gain = 152.016
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+No constraint files found.
+---------------------------------------------------------------------------------
+Start RTL Component Statistics 
+---------------------------------------------------------------------------------
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input     10 Bit       Adders := 1     
+	   2 Input      2 Bit       Adders := 1     
++---XORs : 
+	   2 Input      1 Bit         XORs := 48    
+	   4 Input      1 Bit         XORs := 8     
++---Registers : 
+	               64 Bit    Registers := 7     
+	               32 Bit    Registers := 5     
+	               24 Bit    Registers := 1     
+	               10 Bit    Registers := 1     
+	                5 Bit    Registers := 2     
+	                3 Bit    Registers := 1     
+	                2 Bit    Registers := 3     
+	                1 Bit    Registers := 7     
++---RAMs : 
+	              64K Bit         RAMs := 1     
++---Muxes : 
+	   2 Input     64 Bit        Muxes := 3     
+	   2 Input     32 Bit        Muxes := 4     
+	   6 Input     32 Bit        Muxes := 4     
+	   2 Input      1 Bit        Muxes := 36    
+---------------------------------------------------------------------------------
+Finished RTL Component Statistics 
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start RTL Hierarchical Component Statistics 
+---------------------------------------------------------------------------------
+Hierarchical RTL Component report 
+Module Skip_adder 
+Detailed RTL Component Info : 
++---XORs : 
+	   2 Input      1 Bit         XORs := 8     
++---Muxes : 
+	   2 Input      1 Bit        Muxes := 5     
+Module Phase_acumulator 
+Detailed RTL Component Info : 
++---Registers : 
+	               24 Bit    Registers := 1     
+Module BRAM_Controller 
+Detailed RTL Component Info : 
++---Registers : 
+	               64 Bit    Registers := 1     
++---RAMs : 
+	              64K Bit         RAMs := 1     
+Module Delay 
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input      2 Bit       Adders := 1     
++---Registers : 
+	                2 Bit    Registers := 1     
+Module BIST_logic 
+Detailed RTL Component Info : 
++---XORs : 
+	   4 Input      1 Bit         XORs := 8     
++---Registers : 
+	               64 Bit    Registers := 6     
+	                1 Bit    Registers := 1     
++---Muxes : 
+	   2 Input     64 Bit        Muxes := 3     
+Module Debouncer 
+Detailed RTL Component Info : 
++---Registers : 
+	                3 Bit    Registers := 1     
+Module DDS_core 
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input     10 Bit       Adders := 1     
++---Registers : 
+	               10 Bit    Registers := 1     
++---Muxes : 
+	   2 Input      1 Bit        Muxes := 1     
+Module DDS_core_ip_v1_0_S00_AXI 
+Detailed RTL Component Info : 
++---Registers : 
+	               32 Bit    Registers := 5     
+	                5 Bit    Registers := 2     
+	                2 Bit    Registers := 2     
+	                1 Bit    Registers := 6     
++---Muxes : 
+	   2 Input     32 Bit        Muxes := 4     
+	   6 Input     32 Bit        Muxes := 4     
+	   2 Input      1 Bit        Muxes := 5     
+---------------------------------------------------------------------------------
+Finished RTL Hierarchical Component Statistics
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Part Resource Summary
+---------------------------------------------------------------------------------
+Part Resources:
+DSPs: 220 (col length:60)
+BRAMs: 280 (col length: RAMB18 60 RAMB36 30)
+---------------------------------------------------------------------------------
+Finished Part Resource Summary
+---------------------------------------------------------------------------------
+No constraint files found.
+---------------------------------------------------------------------------------
+Start Cross Boundary and Area Optimization
+---------------------------------------------------------------------------------
+Warning: Parallel synthesis criteria is not met 
+WARNING: [Synth 8-3331] design DDS_core_ip_v1_0 has unconnected port s00_axi_awprot[2]
+WARNING: [Synth 8-3331] design DDS_core_ip_v1_0 has unconnected port s00_axi_awprot[1]
+WARNING: [Synth 8-3331] design DDS_core_ip_v1_0 has unconnected port s00_axi_awprot[0]
+WARNING: [Synth 8-3331] design DDS_core_ip_v1_0 has unconnected port s00_axi_arprot[2]
+WARNING: [Synth 8-3331] design DDS_core_ip_v1_0 has unconnected port s00_axi_arprot[1]
+WARNING: [Synth 8-3331] design DDS_core_ip_v1_0 has unconnected port s00_axi_arprot[0]
+INFO: [Synth 8-3886] merging instance 'DDS_core_ip_v1_0_S00_AXI_inst/axi_rresp_reg[0]' (FDRE) to 'DDS_core_ip_v1_0_S00_AXI_inst/axi_rresp_reg[1]'
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\DDS_core_ip_v1_0_S00_AXI_inst/axi_rresp_reg[1] )
+INFO: [Synth 8-3886] merging instance 'DDS_core_ip_v1_0_S00_AXI_inst/axi_bresp_reg[0]' (FDRE) to 'DDS_core_ip_v1_0_S00_AXI_inst/axi_bresp_reg[1]'
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\DDS_core_ip_v1_0_S00_AXI_inst/axi_bresp_reg[1] )
+---------------------------------------------------------------------------------
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:07 ; elapsed = 00:00:07 . Memory (MB): peak = 711.645 ; gain = 348.578
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start ROM, RAM, DSP and Shift Register Reporting
+---------------------------------------------------------------------------------
+
+Block RAM: Preliminary Mapping  Report (see note below)
++-----------------+------------+------------------------+---+---+------------------------+---+---+------------------+--------+--------+
+|Module Name      | RTL Object | PORT A (Depth x Width) | W | R | PORT B (Depth x Width) | W | R | Ports driving FF | RAMB18 | RAMB36 | 
++-----------------+------------+------------------------+---+---+------------------------+---+---+------------------+--------+--------+
+|BRAM_Controller: | eeprom_reg | 1 K x 64(READ_FIRST)   | W |   | 1 K x 64(WRITE_FIRST)  |   | R | Port A and B     | 0      | 2      | 
++-----------------+------------+------------------------+---+---+------------------------+---+---+------------------+--------+--------+
+
+Note: The table above is a preliminary report that shows the Block RAMs at the current stage of the synthesis flow. Some Block RAMs may be reimplemented as non Block RAM primitives later in the synthesis flow. Multiple instantiated Block RAMs are reported only once. 
+---------------------------------------------------------------------------------
+Finished ROM, RAM, DSP and Shift Register Reporting
+---------------------------------------------------------------------------------
+INFO: [Synth 8-6837] The timing for the instance DDS_core_ip_v1_0_S00_AXI_insti_0/DDS_core_ip_v1_0_S00_AXI_inst/DDS_core_inst/BRAM/eeprom_reg_0 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
+INFO: [Synth 8-6837] The timing for the instance DDS_core_ip_v1_0_S00_AXI_insti_0/DDS_core_ip_v1_0_S00_AXI_inst/DDS_core_inst/BRAM/eeprom_reg_1 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+No constraint files found.
+---------------------------------------------------------------------------------
+Start Timing Optimization
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Timing Optimization : Time (s): cpu = 00:00:08 ; elapsed = 00:00:07 . Memory (MB): peak = 711.645 ; gain = 348.578
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start ROM, RAM, DSP and Shift Register Reporting
+---------------------------------------------------------------------------------
+
+Block RAM: Final Mapping  Report
++-----------------+------------+------------------------+---+---+------------------------+---+---+------------------+--------+--------+
+|Module Name      | RTL Object | PORT A (Depth x Width) | W | R | PORT B (Depth x Width) | W | R | Ports driving FF | RAMB18 | RAMB36 | 
++-----------------+------------+------------------------+---+---+------------------------+---+---+------------------+--------+--------+
+|BRAM_Controller: | eeprom_reg | 1 K x 64(READ_FIRST)   | W |   | 1 K x 64(WRITE_FIRST)  |   | R | Port A and B     | 0      | 2      | 
++-----------------+------------+------------------------+---+---+------------------------+---+---+------------------+--------+--------+
+
+---------------------------------------------------------------------------------
+Finished ROM, RAM, DSP and Shift Register Reporting
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start Technology Mapping
+---------------------------------------------------------------------------------
+INFO: [Synth 8-6837] The timing for the instance DDS_core_ip_v1_0_S00_AXI_inst/DDS_core_inst/BRAM/eeprom_reg_0 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
+INFO: [Synth 8-6837] The timing for the instance DDS_core_ip_v1_0_S00_AXI_inst/DDS_core_inst/BRAM/eeprom_reg_1 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
+---------------------------------------------------------------------------------
+Finished Technology Mapping : Time (s): cpu = 00:00:08 ; elapsed = 00:00:08 . Memory (MB): peak = 711.645 ; gain = 348.578
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished IO Insertion : Time (s): cpu = 00:00:09 ; elapsed = 00:00:08 . Memory (MB): peak = 711.645 ; gain = 348.578
+---------------------------------------------------------------------------------
+
+Report Check Netlist: 
++------+------------------+-------+---------+-------+------------------+
+|      |Item              |Errors |Warnings |Status |Description       |
++------+------------------+-------+---------+-------+------------------+
+|1     |multi_driven_nets |      0|        0|Passed |Multi driven nets |
++------+------------------+-------+---------+-------+------------------+
+---------------------------------------------------------------------------------
+Start Renaming Generated Instances
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Instances : Time (s): cpu = 00:00:09 ; elapsed = 00:00:08 . Memory (MB): peak = 711.645 ; gain = 348.578
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start Rebuilding User Hierarchy
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:09 ; elapsed = 00:00:08 . Memory (MB): peak = 711.645 ; gain = 348.578
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Ports
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Ports : Time (s): cpu = 00:00:09 ; elapsed = 00:00:08 . Memory (MB): peak = 711.645 ; gain = 348.578
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Handling Custom Attributes
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:09 ; elapsed = 00:00:08 . Memory (MB): peak = 711.645 ; gain = 348.578
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Nets
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Nets : Time (s): cpu = 00:00:09 ; elapsed = 00:00:08 . Memory (MB): peak = 711.645 ; gain = 348.578
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start ROM, RAM, DSP and Shift Register Reporting
+---------------------------------------------------------------------------------
+
+Static Shift Register Report:
++-----------------+-------------------------------------------------------------------+--------+-------+--------------+--------------------+-------------------+--------+---------+
+|Module Name      | RTL Name                                                          | Length | Width | Reset Signal | Pull out first Reg | Pull out last Reg | SRL16E | SRLC32E | 
++-----------------+-------------------------------------------------------------------+--------+-------+--------------+--------------------+-------------------+--------+---------+
+|DDS_core_ip_v1_0 | DDS_core_ip_v1_0_S00_AXI_inst/DDS_core_inst/BIST/Din_del4_reg[63] | 4      | 64    | YES          | NO                 | YES               | 64     | 0       | 
++-----------------+-------------------------------------------------------------------+--------+-------+--------------+--------------------+-------------------+--------+---------+
+
+---------------------------------------------------------------------------------
+Finished ROM, RAM, DSP and Shift Register Reporting
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Writing Synthesis Report
+---------------------------------------------------------------------------------
+
+Report BlackBoxes: 
++-+--------------+----------+
+| |BlackBox name |Instances |
++-+--------------+----------+
++-+--------------+----------+
+
+Report Cell Usage: 
++------+-----------+------+
+|      |Cell       |Count |
++------+-----------+------+
+|1     |BUFG       |     2|
+|2     |CARRY4     |     6|
+|3     |ISERDESE2  |     8|
+|4     |LUT1       |     2|
+|5     |LUT2       |   102|
+|6     |LUT3       |    72|
+|7     |LUT4       |    91|
+|8     |LUT5       |    65|
+|9     |LUT6       |    96|
+|10    |OSERDESE2  |     8|
+|11    |PLLE2_BASE |     1|
+|12    |RAMB36E1   |     2|
+|13    |SRL16E     |    64|
+|14    |FDRE       |   377|
+|15    |FDSE       |    55|
+|16    |IBUF       |    51|
+|17    |OBUF       |    50|
++------+-----------+------+
+
+Report Instance Areas: 
++------+--------------------------------+------------------------------+------+
+|      |Instance                        |Module                        |Cells |
++------+--------------------------------+------------------------------+------+
+|1     |top                             |                              |  1052|
+|2     |  DDS_core_ip_v1_0_S00_AXI_inst |DDS_core_ip_v1_0_S00_AXI      |   949|
+|3     |    DDS_core_inst               |DDS_core                      |   687|
+|4     |      BRAM                      |BRAM_Controller               |     2|
+|5     |      BIST                      |BIST_logic                    |   527|
+|6     |        Del                     |Delay                         |   135|
+|7     |        \genblk1[0].DES_i       |deserializer_1_8_primitive    |     1|
+|8     |        \genblk1[1].DES_i       |deserializer_1_8_primitive_7  |     1|
+|9     |        \genblk1[2].DES_i       |deserializer_1_8_primitive_8  |     1|
+|10    |        \genblk1[3].DES_i       |deserializer_1_8_primitive_9  |     1|
+|11    |        \genblk1[4].DES_i       |deserializer_1_8_primitive_10 |     1|
+|12    |        \genblk1[5].DES_i       |deserializer_1_8_primitive_11 |     1|
+|13    |        \genblk1[6].DES_i       |deserializer_1_8_primitive_12 |     1|
+|14    |        \genblk1[7].DES_i       |deserializer_1_8_primitive_13 |     2|
+|15    |      PA                        |Phase_acumulator              |   100|
+|16    |      PLL                       |CLK_gen                       |    10|
+|17    |      WE_gen                    |Debouncer                     |    19|
+|18    |      \genblk1[0].SER_i         |Serializer_8_1_primitive_v2   |     1|
+|19    |      \genblk1[1].SER_i         |Serializer_8_1_primitive_v2_0 |     1|
+|20    |      \genblk1[2].SER_i         |Serializer_8_1_primitive_v2_1 |     1|
+|21    |      \genblk1[3].SER_i         |Serializer_8_1_primitive_v2_2 |     1|
+|22    |      \genblk1[4].SER_i         |Serializer_8_1_primitive_v2_3 |     1|
+|23    |      \genblk1[5].SER_i         |Serializer_8_1_primitive_v2_4 |     1|
+|24    |      \genblk1[6].SER_i         |Serializer_8_1_primitive_v2_5 |     1|
+|25    |      \genblk1[7].SER_i         |Serializer_8_1_primitive_v2_6 |     1|
++------+--------------------------------+------------------------------+------+
+---------------------------------------------------------------------------------
+Finished Writing Synthesis Report : Time (s): cpu = 00:00:09 ; elapsed = 00:00:08 . Memory (MB): peak = 711.645 ; gain = 348.578
+---------------------------------------------------------------------------------
+Synthesis finished with 0 errors, 0 critical warnings and 22 warnings.
+Synthesis Optimization Runtime : Time (s): cpu = 00:00:09 ; elapsed = 00:00:08 . Memory (MB): peak = 711.645 ; gain = 348.578
+Synthesis Optimization Complete : Time (s): cpu = 00:00:09 ; elapsed = 00:00:08 . Memory (MB): peak = 711.645 ; gain = 348.578
+INFO: [Project 1-571] Translating synthesized netlist
+INFO: [Netlist 29-17] Analyzing 17 Unisim elements for replacement
+INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
+INFO: [Project 1-570] Preparing netlist for logic optimization
+INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 797.816 ; gain = 0.000
+INFO: [Project 1-111] Unisim Transformation Summary:
+  A total of 1 instances were transformed.
+  PLLE2_BASE => PLLE2_ADV: 1 instances
+
+INFO: [Common 17-83] Releasing license: Synthesis
+51 Infos, 25 Warnings, 0 Critical Warnings and 0 Errors encountered.
+synth_design completed successfully
+synth_design: Time (s): cpu = 00:00:13 ; elapsed = 00:00:14 . Memory (MB): peak = 797.816 ; gain = 446.629
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 797.816 ; gain = 0.000
+WARNING: [Constraints 18-5210] No constraints selected for write.
+Resolution: This message can indicate that there are no constraints for the design, or it can indicate that the used_in flags are set such that the constraints are ignored. This later case is used when running synth_design to not write synthesis constraints to the resulting checkpoint. Instead, project constraints are read when the synthesized design is opened.
+INFO: [Common 17-1381] The checkpoint 'c:/Users/pkowo/Desktop/Studia/SystemyDedykowane/Projekt/ip_repo/edit_DDS_core_ip_v1_0.runs/synth_1/DDS_core_ip_v1_0.dcp' has been generated.
+INFO: [runtcl-4] Executing : report_utilization -file DDS_core_ip_v1_0_utilization_synth.rpt -pb DDS_core_ip_v1_0_utilization_synth.pb
+INFO: [Common 17-206] Exiting Vivado at Mon Jun 16 23:10:31 2025...

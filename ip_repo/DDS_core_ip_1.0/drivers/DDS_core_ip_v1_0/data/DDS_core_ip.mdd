@@ -1,0 +1,10 @@
+
+
+OPTION psf_version = 2.1;
+
+BEGIN DRIVER DDS_core_ip
+	OPTION supported_peripherals = (DDS_core_ip);
+	OPTION copyfiles = all;
+	OPTION VERSION = 1.0;
+	OPTION NAME = DDS_core_ip;
+END DRIVER

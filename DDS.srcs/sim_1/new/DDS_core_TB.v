@@ -22,9 +22,9 @@
 
 module DDS_core_TB();
 
-    parameter w_step = 8;
-    parameter w_PA = 16;
-    parameter w_addr = 8;
+    parameter w_step = 14;
+    parameter w_PA = 24;
+    parameter w_addr = 10;
     parameter w_data = 64;
     parameter w_sample = 8;
     parameter N = 4;
@@ -35,6 +35,7 @@ module DDS_core_TB();
     reg [w_step-1:0] step;
     wire [w_data-1:0] data_in;
     reg WE;
+    reg Out_en;
     reg BIST_en;
     wire [w_sample-1:0] sample;
     wire LS_CLK;
@@ -42,10 +43,12 @@ module DDS_core_TB();
     
     reg dataEN;
     reg [w_data-1:0] data_buf;
+    reg [2:0] WE_cnt;
+    reg WE_int;
     
     time T_CLK = 10;
     
-    DDS_core #(w_step, w_PA, w_addr, w_data, w_sample, N) DUT (ref_CLK, CE, RESET, step, data_in, WE, BIST_en, sample, LS_CLK, BIST_correct);
+    DDS_core #(w_step, w_PA, w_addr, w_data, w_sample, N) DUT (ref_CLK, CE, RESET, step, data_in, WE_int, Out_en, BIST_en, sample, LS_CLK, BIST_correct);
     
     
     function real sin (input real x);
@@ -145,26 +148,39 @@ module DDS_core_TB();
     
     always @(posedge LS_CLK)
     begin
-//        #1;
-        if (dataEN & ~romEN)
+        if (WE_cnt == 0)
         begin
-//            data_buf <= data_buf + 'h0808080808080808;
-            data_buf[63:56] <= data_buf[63:56] + 'h8;
-            data_buf[55:48] <= data_buf[55:48] + 'h8;
-            data_buf[47:40] <= data_buf[47:40] + 'h8;
-            data_buf[39:32] <= data_buf[39:32] + 'h8;
-            data_buf[31:24] <= data_buf[31:24] + 'h8;
-            data_buf[23:16] <= data_buf[23:16] + 'h8;
-            data_buf[15:8] <= data_buf[15:8] + 'h8;
-            data_buf[7:0] <= data_buf[7:0] + 'h8;
-//            data_buf <= {data_buf[63:56] + 'h8, data_buf[55:48] + 'h8, data_buf[47:40] + 'h8, data_buf[39:32] + 'h8, data_buf[31:24] + 'h8, data_buf[23:16] + 'h8, data_buf[15:8] + 'h8, data_buf[7:0] + 'h8};
-            
+//            #1;
+            if (dataEN & ~romEN)
+            begin
+    //            data_buf <= data_buf + 'h0808080808080808;
+                data_buf[63:56] <= data_buf[63:56] + 'h8;
+                data_buf[55:48] <= data_buf[55:48] + 'h8;
+                data_buf[47:40] <= data_buf[47:40] + 'h8;
+                data_buf[39:32] <= data_buf[39:32] + 'h8;
+                data_buf[31:24] <= data_buf[31:24] + 'h8;
+                data_buf[23:16] <= data_buf[23:16] + 'h8;
+                data_buf[15:8] <= data_buf[15:8] + 'h8;
+                data_buf[7:0] <= data_buf[7:0] + 'h8;
+    //            data_buf <= {data_buf[63:56] + 'h8, data_buf[55:48] + 'h8, data_buf[47:40] + 'h8, data_buf[39:32] + 'h8, data_buf[31:24] + 'h8, data_buf[23:16] + 'h8, data_buf[15:8] + 'h8, data_buf[7:0] + 'h8};
+                
+            end
+            else if (dataEN & romEN)
+            begin
+                data_buf = rom[romAddr];
+                romAddr <= romAddr + 1;
+            end
         end
-        else if (dataEN & romEN)
+        if (WE)
         begin
-            data_buf = rom[romAddr];
-            romAddr <= romAddr + 1;
+            WE_cnt = WE_cnt + 1;
+            if (WE_cnt == 0)
+                WE_int <= 1;
+            else if (WE_cnt == 3)
+                WE_int <= 0;
         end
+        else
+            WE_int <= 0;
     end
     
     assign data_in = data_buf;
@@ -175,8 +191,11 @@ module DDS_core_TB();
         romEN <= 1;
         CE <= 1;
         RESET <= 0;
-        step <= 1500;
+        step <= 1500*2**8;
         WE <= 0;
+//        WE_int <= 0;
+        WE_cnt <= 0;
+        Out_en <= 0;
         data_buf <= 'h0706050403020100;
         dataEN <= 0;
         #5500;
@@ -185,13 +204,16 @@ module DDS_core_TB();
         RESET <= 0;
         #(1*T_CLK);
         WE <= 1;
+//        WE_int <= 1;
         #(0.25*T_CLK);
         dataEN <= 1;
-        #(2**(w_addr)*T_CLK);
+        #(8*2**(w_addr)*T_CLK);
         dataEN <= 0;
         WE <= 0;
+//        WE_int <= 0;
+        Out_en <= 1;
         #((2**(w_addr) + 100)*T_CLK);
-        BIST_en <= 1;
+//        BIST_en <= 1;
         #(200*T_CLK);
         $finish;
         

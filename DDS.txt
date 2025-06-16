@@ -57,3 +57,93 @@ GENE - przejscie do trybu generowania sygnału
 BIST - przejscie do trybu testowania (po tescie automatyczne wyslanie wyniku pass/all + zapytanie o raport (y/n))
 STOP - zatrzymanie pracy ukladu
 RESE - software'owy reset DDS'a (RESET wyprowadzic tez na przycisk !!!)
+
+
+#define SAMPLES 8192
+#define SAMPLE_LEN 8
+#define SAMPLE_CHAR_LEN 3
+
+char8 command[SAMPLE_CHAR_LEN + 1];
+
+void load_step() {
+u32 ret;
+char8 c;
+    outbyte ( c = inbyte() );
+    ret = 10000 * (c - '0');
+    outbyte ( c = inbyte() );
+    ret = 1000 * (c - '0');
+    outbyte ( c = inbyte() );
+    ret = 100 * (c - '0');
+    outbyte ( c = inbyte() );
+    ret = 10 * (c - '0');
+    outbyte ( c = inbyte() );
+    ret = (c - '0');
+
+
+}
+
+u32 read_sample() {
+u32 ret;
+char8 c;
+    outbyte ( c = inbyte() );
+    ret += 100 * (c - '0');
+    outbyte ( c = inbyte() );
+    ret += 10 * (c - '0');
+    outbyte ( c = inbyte() );
+    ret += (c - '0');
+    return ret;
+}
+
+void load_data() {
+    u32 buf_high = 0;
+    u32 buf_low = 0;
+    u32 sample;
+    for (u32 j = 0; j < SAMPLES/SAMPLE_LEN; j = j + 1) {
+        for (u32 i = 0; i < 7; i = i + 1) {
+            sample = read_sample();
+            if (i < 4) {
+                buf_low += (sample << i*8);
+            }
+            else {
+                buf_high += (sample << (i - 4)*8);
+            }
+        }
+    
+    }
+}
+
+void read_command() {
+    outbyte ( c = inbyte() );
+    command[0] = c;
+    outbyte ( c = inbyte() );
+    command[1] = c;
+    outbyte ( c = inbyte() );
+    command[2] = c;
+    outbyte ( c = inbyte() );
+    command[3] = c;
+}
+
+void command() {
+    command[4] = '\0';
+    read_command();
+    if (command[0] == 'l' && command[1] == 'o' && command[2] == 'a' && command[3] == 'd') {
+        load_data();
+    } else if (command[0] == 's' && command[1] == 't' && command[2] == 'e' && command[3] == 'p') {
+        load_step();
+        // step 
+    } else if (command[0] == 'g' && command[1] == 'e' && command[2] == 'n' && command[3] == 'e') {
+        // gene
+    } else if (command[0] == 'b' && command[1] == 'i' && command[2] == 's' && command[3] == 't') {
+        // bist
+    } else if (command[0] == 's' && command[1] == 't' && command[2] == 'o' && command[3] == 'p') {
+        // stop
+    } else if (command[0] == 'r' && command[1] == 'e' && command[2] == 's' && command[3] == 'e') {
+        // rese
+    }
+}
+
+int main () {
+    while (true) {
+        command();
+    }
+}
